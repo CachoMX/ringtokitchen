@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
-  trailingSlash: false,
+  // No special config needed for Vercel
 };
 
 module.exports = nextConfig;
