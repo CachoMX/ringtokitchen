@@ -10,6 +10,7 @@ const marcellus = Marcellus({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ringtokitchen.ai'),
   title: "Ring to Kitchen AI | AI Voice Agent for Restaurants",
   description: "Let your AI handle calls, reservations, and orders. Your team focuses on hospitality. 24/7 AI support for restaurants.",
   keywords: ["AI phone system for restaurants", "restaurant AI voice agent", "restaurant call answering AI", "AI reservation system", "restaurant automation"],
