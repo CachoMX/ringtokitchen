@@ -8,6 +8,16 @@ import DemoModal from '@/components/DemoModal';
 import { getBlogPost, getAllBlogPosts } from '@/lib/blogData';
 import Link from 'next/link';
 
+// Generate static paths for all blog posts at build time
+export function generateStaticParams() {
+  return getAllBlogPosts().map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+// Don't allow dynamic params - only pre-generated ones
+export const dynamicParams = false;
+
 export default function BlogPostPage() {
   const params = useParams();
   const slug = params?.slug as string;
