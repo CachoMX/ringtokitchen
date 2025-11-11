@@ -14,7 +14,7 @@ export const COMPANY_INFO = {
   email: 'hello@ringtokitchen.ai',
   phone: '+1 (888) 555-RING',
   website: 'ringtokitchen.ai',
-  calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL || '',
+  calendlyUrl: 'https://calendly.com/austin-vwdd/ring-to-kitchen-ai',
 };
 
 export const SOCIAL_LINKS = {

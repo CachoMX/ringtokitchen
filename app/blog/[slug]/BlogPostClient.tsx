@@ -87,13 +87,17 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
             </div>
             <div>
               <p className="font-bold text-primary-navy">{post.author}</p>
-              <p className="text-sm text-gray-500">Published on {new Date(post.date).toLocaleDateString()}</p>
+              <p className="text-sm text-gray-500">Published on {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
             </div>
           </div>
 
           {/* Featured Image */}
           <div className="mb-12 rounded-2xl overflow-hidden bg-gradient-to-br from-primary-navy to-energy-red h-96 flex items-center justify-center text-white text-6xl">
-            📝
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Content */}

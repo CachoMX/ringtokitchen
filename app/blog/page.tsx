@@ -92,8 +92,12 @@ export default function BlogPage() {
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group border border-soft-gray"
               >
                 {/* Featured Image */}
-                <div className="h-48 bg-gradient-to-br from-primary-navy to-energy-red flex items-center justify-center text-white text-5xl">
-                  📝
+                <div className="h-48 bg-gradient-to-br from-primary-navy to-energy-red flex items-center justify-center text-white text-5xl overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Content */}

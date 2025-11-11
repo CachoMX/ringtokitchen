@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-01-15',
     readTime: '8 min',
     author: 'Ring to Kitchen Team',
-    image: '/images/blog/ai-transformation.jpg',
+    image: '/images/blogs/how_ai_is_transforming_restaurant_customer_service.jpg',
     content: `
 # How AI is Transforming Restaurant Customer Service
 
@@ -132,7 +132,7 @@ The restaurants that embrace AI now will have a significant advantage in efficie
     date: '2025-01-12',
     readTime: '6 min',
     author: 'Ring to Kitchen Team',
-    image: '/images/blog/reduce-missed-calls.jpg',
+    image: '/images/blogs/5_ways_to_reduce_missed_calls_in_your_restaurant.jpg',
     content: `
 # 5 Ways to Reduce Missed Calls in Your Restaurant
 
@@ -332,7 +332,7 @@ The technology has matured to the point where it's more expensive NOT to impleme
     date: '2025-01-08',
     readTime: '7 min',
     author: 'Ring to Kitchen Team',
-    image: '/images/blog/future-ai.jpg',
+    image: '/images/blogs/the-future-of-restaurant-operations-ai-voice-agents.jpg',
     content: `
 # The Future of Restaurant Operations: AI Voice Agents
 
@@ -611,7 +611,7 @@ The restaurants that thrive in the next decade will be those that embrace AI tod
     date: '2025-01-05',
     readTime: '9 min',
     author: 'Ring to Kitchen Team',
-    image: '/images/blog/case-study-luna.jpg',
+    image: '/images/blogs/case -study-how-luna-pizzeria-increased-orders-by-40-with-aI.jpg',
     content: `
 # Case Study: How Luna Pizzeria Increased Orders by 40% with AI
 
@@ -944,7 +944,7 @@ The technology is ready. The ROI is proven. The question is: how long will you w
     date: '2025-01-02',
     readTime: '7 min',
     author: 'Ring to Kitchen Team',
-    image: '/images/blog/reservations-comparison.jpg',
+    image: '/images/blogs/restaurant-reservation-systems-manual-vs-ai.jpg',
     content: `
 # Restaurant Reservation Systems: Manual vs. AI
 
@@ -1334,7 +1334,7 @@ The trend is clear: AI is becoming industry standard. Even high-end restaurants 
     date: '2024-12-28',
     readTime: '8 min',
     author: 'Ring to Kitchen Team',
-    image: '/images/blog/pos-integration.jpg',
+    image: '/images/blogs/integrating-ai-phone-systems-with-your-restaurant-pos.jpg',
     content: `
 # Integrating AI Phone Systems with Your Restaurant POS
 

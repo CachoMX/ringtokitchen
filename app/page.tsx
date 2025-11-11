@@ -290,8 +290,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {latestPosts.map((post, idx) => (
               <Link key={idx} href={`/blog/${post.slug}`} className="bg-white rounded-xl overflow-hidden hover:shadow-xl transition group">
-                <div className="h-48 bg-gradient-to-br from-primary-navy to-energy-red flex items-center justify-center text-white text-4xl">
-                  📝
+                <div className="h-48 bg-gradient-to-br from-primary-navy to-energy-red flex items-center justify-center text-white text-4xl overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
