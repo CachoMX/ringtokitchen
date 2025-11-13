@@ -38,8 +38,16 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>{COMPANY_INFO.email}</li>
-              <li>{COMPANY_INFO.phone}</li>
+              <li>
+                <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-white transition">
+                  {COMPANY_INFO.email}
+                </a>
+              </li>
+              <li>
+                <a href="tel:+14482299561" className="hover:text-white transition font-bold">
+                  {COMPANY_INFO.phone}
+                </a>
+              </li>
               <li className="flex gap-3 mt-4">
                 <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
                   <span className="text-xl">in</span>
