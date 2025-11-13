@@ -46,14 +46,28 @@ export default function HomePage() {
 
           {/* Headline */}
           <h1 className="font-marcellus text-5xl sm:text-6xl lg:text-7xl text-white mb-6 leading-tight">
-            AI that Speaks<br />
-            <span className="bg-gradient-to-r from-energy-red to-[#FF6B4A] text-transparent bg-clip-text">Restaurant</span>
+            Never Miss<br />
+            <span className="bg-gradient-to-r from-energy-red to-[#FF6B4A] text-transparent bg-clip-text">Another Order</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10">
-            Let your AI handle calls, reservations, and orders. Your team focuses on hospitality.
+          <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+            Restaurant voice AI that handles every call, takes perfect orders, and works 24/7.
+            Works standalone or integrates with your existing POS.
           </p>
+
+          {/* Key Features Pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10 max-w-3xl mx-auto">
+            <div className="bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/30 text-white text-sm font-medium">
+              99% Order Accuracy Voice AI
+            </div>
+            <div className="bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/30 text-white text-sm font-medium">
+              Supports English & Spanish
+            </div>
+            <div className="bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/30 text-white text-sm font-medium">
+              Enterprise-Scale Volume
+            </div>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -78,31 +92,82 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Results Stats Section */}
+      <section className="py-16 bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-marcellus text-3xl sm:text-4xl text-primary-navy mb-3">
+              Real Results from Real Restaurants
+            </h2>
+            <p className="text-lg text-gray-600">
+              Proven impact on your bottom line
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-energy-red/5 to-energy-red/10 border border-energy-red/20">
+              <div className="text-5xl font-bold text-energy-red mb-2">100%</div>
+              <div className="text-sm text-gray-600 font-medium">Calls captured in queue</div>
+              <div className="text-xs text-gray-500 mt-1">Never miss an order</div>
+            </div>
+
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary-navy/5 to-primary-navy/10 border border-primary-navy/20">
+              <div className="text-5xl font-bold text-primary-navy mb-2">75%</div>
+              <div className="text-sm text-gray-600 font-medium">Reduction in labor costs</div>
+              <div className="text-xs text-gray-500 mt-1">Per order efficiency gain</div>
+            </div>
+
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-energy-red/5 to-energy-red/10 border border-energy-red/20">
+              <div className="text-5xl font-bold text-energy-red mb-2">25%</div>
+              <div className="text-sm text-gray-600 font-medium">Increase in average check</div>
+              <div className="text-xs text-gray-500 mt-1">AI-driven upselling</div>
+            </div>
+
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary-navy/5 to-primary-navy/10 border border-primary-navy/20">
+              <div className="text-5xl font-bold text-primary-navy mb-2">20%</div>
+              <div className="text-sm text-gray-600 font-medium">Increase in repeat orders</div>
+              <div className="text-xs text-gray-500 mt-1">Within first month</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Value Proposition Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-marcellus text-4xl sm:text-5xl text-primary-navy mb-4">
-              Why Restaurants Choose Ring to Kitchen
+              Why Restaurants Choose Ring to Kitchen AI
             </h2>
             <p className="text-lg text-gray-600">
-              Smarter calls. Better service.
+              Restaurant-trained AI that understands your business
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {VALUE_PROPOSITIONS.map((value, idx) => (
-              <div
-                key={idx}
-                className="bg-gradient-to-br from-energy-red/5 to-warm-taupe/5 border border-soft-gray rounded-2xl p-8 hover:shadow-lg transition transform hover:-translate-y-2"
-              >
-                <div className="text-5xl mb-4">{value.icon}</div>
-                <h3 className="font-marcellus text-2xl text-primary-navy mb-3">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="text-5xl mb-4">🎯</div>
+              <h3 className="font-marcellus text-2xl text-primary-navy mb-3">Restaurant-Trained AI</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Understands "extra cheese," "gluten-free crust," and complex restaurant conversations. 99% accuracy on food orders.
+              </p>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="text-5xl mb-4">🔧</div>
+              <h3 className="font-marcellus text-2xl text-primary-navy mb-3">Works Your Way</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Complete standalone solution or seamless integration with your existing POS. You choose what works for your restaurant.
+              </p>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="text-5xl mb-4">📈</div>
+              <h3 className="font-marcellus text-2xl text-primary-navy mb-3">Proven Results</h3>
+              <p className="text-gray-600 leading-relaxed">
+                30% average increase in phone orders, 99.9% uptime, and enterprise-grade reliability. Real restaurants, real results.
+              </p>
+            </div>
           </div>
         </div>
       </section>
