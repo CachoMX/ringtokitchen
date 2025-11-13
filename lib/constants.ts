@@ -25,7 +25,7 @@ export const SOCIAL_LINKS = {
 export const PRICING_TIERS = [
   {
     name: 'Starter',
-    price: 99,
+    price: 249,
     description: 'Perfect for small cafés and single locations',
     features: [
       { text: '500 minutes/month (~17 min/day)', included: true },
@@ -43,7 +43,7 @@ export const PRICING_TIERS = [
   },
   {
     name: 'Professional',
-    price: 299,
+    price: 499,
     description: 'For growing restaurants and multi-location operators',
     features: [
       { text: '2,000 minutes/month (~67 min/day)', included: true },
@@ -61,7 +61,7 @@ export const PRICING_TIERS = [
   },
   {
     name: 'Enterprise',
-    price: null,
+    price: 999,
     description: 'For high-volume chains with custom needs',
     features: [
       { text: 'Unlimited minutes', included: true },
