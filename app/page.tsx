@@ -108,8 +108,14 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-20 bg-soft-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="how-it-works" className="py-20 bg-gradient-to-br from-soft-gray via-white to-soft-gray relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-energy-red rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-navy rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-marcellus text-4xl sm:text-5xl text-primary-navy mb-4">
               How It Works
@@ -119,21 +125,62 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {HOW_IT_WORKS_STEPS.map((step, idx) => (
-              <div key={idx} className="text-center">
-                <div className="bg-white rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center text-4xl shadow-lg">
-                  {step.icon}
-                </div>
-                <div className="bg-energy-red text-white rounded-full w-8 h-8 mx-auto mb-4 flex items-center justify-center font-bold">
+              <div
+                key={idx}
+                className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100"
+                style={{
+                  animation: `fadeInUp 0.6s ease-out ${idx * 0.15}s both`
+                }}
+              >
+                {/* Step number badge - top right */}
+                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-energy-red to-[#E63D23] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
                   {step.number}
                 </div>
-                <h3 className="font-marcellus text-xl text-primary-navy mb-2">{step.title}</h3>
-                <p className="text-gray-600 text-sm">{step.description}</p>
+
+                {/* Connecting line for desktop */}
+                {idx < HOW_IT_WORKS_STEPS.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-energy-red/50 to-transparent"></div>
+                )}
+
+                {/* Icon with animated gradient background */}
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 bg-gradient-to-br from-energy-red/10 to-primary-navy/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-gradient-to-br from-primary-navy to-primary-navy/80 rounded-2xl w-20 h-20 mx-auto flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                    <span className="filter drop-shadow-lg">{step.icon}</span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="text-center">
+                  <h3 className="font-marcellus text-xl text-primary-navy mb-3 group-hover:text-energy-red transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+
+                {/* Hover glow effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-energy-red/5 to-primary-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
             ))}
           </div>
         </div>
+
+        <style jsx>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
       </section>
 
       {/* Pricing Section */}
