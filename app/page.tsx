@@ -1,16 +1,30 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DemoModal from '@/components/DemoModal';
 import { VALUE_PROPOSITIONS, HOW_IT_WORKS_STEPS, PRICING_TIERS, TESTIMONIALS, USE_CASES } from '@/lib/constants';
 import { getAllBlogPosts } from '@/lib/blogData';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export default function HomePage() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const latestPosts = getAllBlogPosts().slice(0, 3);
+  const [animations, setAnimations] = useState<any[]>([null, null, null, null]);
+
+  useEffect(() => {
+    // Load animation files
+    Promise.all([
+      fetch('/animations/phone-ring.json').then(r => r.json()),
+      fetch('/animations/ai-process.json').then(r => r.json()),
+      fetch('/animations/checkmark.json').then(r => r.json()),
+      fetch('/animations/star.json').then(r => r.json()),
+    ]).then(setAnimations);
+  }, []);
 
   return (
     <main className="min-h-screen">
@@ -212,13 +226,18 @@ export default function HomePage() {
                 {/* Icon with animated gradient background */}
                 <div className="relative mb-6">
                   <div className="absolute inset-0 bg-gradient-to-br from-energy-red/10 to-primary-navy/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                  <div
-                    className="relative bg-gradient-to-br from-primary-navy to-primary-navy/80 rounded-2xl w-20 h-20 mx-auto flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"
-                    style={{
-                      animation: `float 3s ease-in-out infinite ${idx * 0.2}s`
-                    }}
-                  >
-                    <span className="filter drop-shadow-lg">{step.icon}</span>
+                  <div className="relative rounded-2xl w-24 h-24 mx-auto flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-500">
+                    {animations[idx] ? (
+                      <Lottie
+                        animationData={animations[idx]}
+                        loop={true}
+                        style={{ width: 100, height: 100 }}
+                      />
+                    ) : (
+                      <div className="w-20 h-20 bg-gradient-to-br from-primary-navy to-primary-navy/80 rounded-2xl flex items-center justify-center text-4xl animate-pulse">
+                        <span className="filter drop-shadow-lg">{step.icon}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
