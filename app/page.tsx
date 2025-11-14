@@ -7,10 +7,171 @@ import DemoModal from '@/components/DemoModal';
 import { VALUE_PROPOSITIONS, HOW_IT_WORKS_STEPS, PRICING_TIERS, TESTIMONIALS, USE_CASES } from '@/lib/constants';
 import { getAllBlogPosts } from '@/lib/blogData';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export default function HomePage() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const latestPosts = getAllBlogPosts().slice(0, 3);
+
+  // Simple Lottie animation data for each step
+  const phoneRingAnimation = {
+    "v": "5.7.4",
+    "fr": 60,
+    "ip": 0,
+    "op": 60,
+    "w": 200,
+    "h": 200,
+    "ddd": 0,
+    "assets": [],
+    "layers": [{
+      "ddd": 0,
+      "ind": 1,
+      "ty": 4,
+      "nm": "Phone",
+      "sr": 1,
+      "ks": {
+        "o": {"a": 0, "k": 100},
+        "r": {"a": 1, "k": [{"t": 0, "s": [-10]}, {"t": 30, "s": [10]}, {"t": 60, "s": [-10]}]},
+        "p": {"a": 0, "k": [100, 100]},
+        "a": {"a": 0, "k": [0, 0]},
+        "s": {"a": 0, "k": [100, 100]}
+      },
+      "shapes": [{
+        "ty": "gr",
+        "it": [{
+          "ty": "rc",
+          "d": 1,
+          "s": {"a": 0, "k": [60, 100]},
+          "p": {"a": 0, "k": [0, 0]},
+          "r": {"a": 0, "k": 10}
+        }, {
+          "ty": "fl",
+          "c": {"a": 0, "k": [0.004, 0.2, 0.365, 1]},
+          "o": {"a": 0, "k": 100}
+        }]
+      }]
+    }]
+  };
+
+  const aiProcessAnimation = {
+    "v": "5.7.4",
+    "fr": 60,
+    "ip": 0,
+    "op": 60,
+    "w": 200,
+    "h": 200,
+    "ddd": 0,
+    "assets": [],
+    "layers": [{
+      "ddd": 0,
+      "ind": 1,
+      "ty": 4,
+      "nm": "Circle",
+      "sr": 1,
+      "ks": {
+        "o": {"a": 0, "k": 100},
+        "r": {"a": 1, "k": [{"t": 0, "s": [0]}, {"t": 60, "s": [360]}]},
+        "p": {"a": 0, "k": [100, 100]},
+        "s": {"a": 1, "k": [{"t": 0, "s": [80, 80]}, {"t": 30, "s": [120, 120]}, {"t": 60, "s": [80, 80]}]}
+      },
+      "shapes": [{
+        "ty": "gr",
+        "it": [{
+          "ty": "el",
+          "d": 1,
+          "s": {"a": 0, "k": [80, 80]},
+          "p": {"a": 0, "k": [0, 0]}
+        }, {
+          "ty": "st",
+          "c": {"a": 0, "k": [0.941, 0.282, 0.2, 1]},
+          "o": {"a": 0, "k": 100},
+          "w": {"a": 0, "k": 5}
+        }]
+      }]
+    }]
+  };
+
+  const kitchenAnimation = {
+    "v": "5.7.4",
+    "fr": 60,
+    "ip": 0,
+    "op": 60,
+    "w": 200,
+    "h": 200,
+    "ddd": 0,
+    "assets": [],
+    "layers": [{
+      "ddd": 0,
+      "ind": 1,
+      "ty": 4,
+      "nm": "Checkmark",
+      "sr": 1,
+      "ks": {
+        "o": {"a": 0, "k": 100},
+        "p": {"a": 1, "k": [{"t": 0, "s": [100, 120]}, {"t": 20, "s": [100, 100]}]},
+        "s": {"a": 1, "k": [{"t": 0, "s": [0, 0]}, {"t": 20, "s": [100, 100]}]}
+      },
+      "shapes": [{
+        "ty": "gr",
+        "it": [{
+          "ty": "sh",
+          "d": 1,
+          "ks": {"a": 0, "k": {"c": false, "v": [[-20, 0], [-5, 15], [20, -15]]}}
+        }, {
+          "ty": "st",
+          "c": {"a": 0, "k": [0.004, 0.2, 0.365, 1]},
+          "o": {"a": 0, "k": 100},
+          "w": {"a": 0, "k": 8},
+          "lc": 2
+        }]
+      }]
+    }]
+  };
+
+  const happyCustomerAnimation = {
+    "v": "5.7.4",
+    "fr": 60,
+    "ip": 0,
+    "op": 60,
+    "w": 200,
+    "h": 200,
+    "ddd": 0,
+    "assets": [],
+    "layers": [{
+      "ddd": 0,
+      "ind": 1,
+      "ty": 4,
+      "nm": "Star",
+      "sr": 1,
+      "ks": {
+        "o": {"a": 1, "k": [{"t": 0, "s": [0]}, {"t": 15, "s": [100]}, {"t": 45, "s": [100]}, {"t": 60, "s": [0]}]},
+        "r": {"a": 1, "k": [{"t": 0, "s": [0]}, {"t": 60, "s": [180]}]},
+        "p": {"a": 0, "k": [100, 100]},
+        "s": {"a": 1, "k": [{"t": 0, "s": [50, 50]}, {"t": 15, "s": [100, 100]}, {"t": 60, "s": [50, 50]}]}
+      },
+      "shapes": [{
+        "ty": "gr",
+        "it": [{
+          "ty": "sr",
+          "sy": 1,
+          "d": 1,
+          "pt": {"a": 0, "k": 5},
+          "p": {"a": 0, "k": [0, 0]},
+          "r": {"a": 0, "k": 0},
+          "ir": {"a": 0, "k": 20},
+          "or": {"a": 0, "k": 40}
+        }, {
+          "ty": "fl",
+          "c": {"a": 0, "k": [0.941, 0.282, 0.2, 1]},
+          "o": {"a": 0, "k": 100}
+        }]
+      }]
+    }]
+  };
+
+  const animations = [phoneRingAnimation, aiProcessAnimation, kitchenAnimation, happyCustomerAnimation];
 
   return (
     <main className="min-h-screen">
@@ -212,8 +373,12 @@ export default function HomePage() {
                 {/* Icon with animated gradient background */}
                 <div className="relative mb-6">
                   <div className="absolute inset-0 bg-gradient-to-br from-energy-red/10 to-primary-navy/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                  <div className="relative bg-gradient-to-br from-primary-navy to-primary-navy/80 rounded-2xl w-20 h-20 mx-auto flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                    <span className="filter drop-shadow-lg">{step.icon}</span>
+                  <div className="relative rounded-2xl w-24 h-24 mx-auto flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-500">
+                    <Lottie
+                      animationData={animations[idx]}
+                      loop={true}
+                      style={{ width: 80, height: 80 }}
+                    />
                   </div>
                 </div>
 
