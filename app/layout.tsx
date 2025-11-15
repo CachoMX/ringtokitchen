@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Marcellus } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 
-const marcellus = Marcellus({
-  weight: "400",
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
-  variable: "--font-marcellus",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -62,7 +62,7 @@ export default function RootLayout({
   const PIXEL_ID = process.env.NEXT_PUBLIC_PIXEL_ID;
 
   return (
-    <html lang="en" className={marcellus.variable}>
+    <html lang="en" className={poppins.variable}>
       <head>
         {/* Google Tag Manager */}
         {GTM_ID && (

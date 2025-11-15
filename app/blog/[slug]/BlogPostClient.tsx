@@ -21,8 +21,8 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
       .split('\n')
       .map(line => {
         // Headers
-        if (line.startsWith('# ')) return `<h1 class="text-4xl font-marcellus text-primary-navy mb-6 mt-8">${line.slice(2)}</h1>`;
-        if (line.startsWith('## ')) return `<h2 class="text-3xl font-marcellus text-primary-navy mb-4 mt-6">${line.slice(3)}</h2>`;
+        if (line.startsWith('# ')) return `<h1 class="text-4xl font-inter text-primary-navy mb-6 mt-8">${line.slice(2)}</h1>`;
+        if (line.startsWith('## ')) return `<h2 class="text-3xl font-inter text-primary-navy mb-4 mt-6">${line.slice(3)}</h2>`;
         if (line.startsWith('### ')) return `<h3 class="text-2xl font-bold text-primary-navy mb-3 mt-4">${line.slice(4)}</h3>`;
         if (line.startsWith('#### ')) return `<h4 class="text-xl font-bold text-primary-navy mb-2 mt-3">${line.slice(5)}</h4>`;
 
@@ -76,7 +76,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
           </div>
 
           {/* Title */}
-          <h1 className="font-marcellus text-4xl sm:text-5xl lg:text-6xl text-primary-navy mb-6 leading-tight">
+          <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-primary-navy mb-6 leading-tight">
             {post.title}
           </h1>
 
@@ -126,7 +126,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
       {/* CTA Section */}
       <section className="py-16 bg-soft-gray">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-marcellus text-3xl text-primary-navy mb-4">
+          <h2 className="font-inter text-3xl text-primary-navy mb-4">
             Ready to automate your restaurant?
           </h2>
           <p className="text-lg text-gray-600 mb-6">
@@ -145,7 +145,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
       {relatedPosts.length > 0 && (
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-marcellus text-3xl text-primary-navy mb-8">Related Articles</h2>
+            <h2 className="font-inter text-3xl text-primary-navy mb-8">Related Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedPosts.map((relatedPost, idx) => (
                 <Link
@@ -163,7 +163,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
                       </span>
                       <span className="text-sm text-gray-500">{relatedPost.readTime}</span>
                     </div>
-                    <h3 className="font-marcellus text-lg text-primary-navy mb-2 group-hover:text-energy-red transition line-clamp-2">
+                    <h3 className="font-inter text-lg text-primary-navy mb-2 group-hover:text-energy-red transition line-clamp-2">
                       {relatedPost.title}
                     </h3>
                     <p className="text-sm text-gray-600 line-clamp-2">{relatedPost.excerpt}</p>

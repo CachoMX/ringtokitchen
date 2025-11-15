@@ -14,7 +14,7 @@ export default function TermsPage() {
 
       <div className="pt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <h1 className="font-marcellus text-4xl sm:text-5xl text-primary-navy mb-6">
+          <h1 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-6">
             Terms of Service
           </h1>
 
@@ -24,7 +24,7 @@ export default function TermsPage() {
 
           <div className="prose prose-lg max-w-none space-y-8 text-gray-700">
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">1. Agreement to Terms</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">1. Agreement to Terms</h2>
               <p className="mb-4">
                 These Terms of Service ("Terms") constitute a legally binding agreement between you and Ring to Kitchen AI, Inc. ("Ring to Kitchen AI," "we," "us," or "our") concerning your access to and use of our AI voice agent services for restaurants.
               </p>
@@ -34,7 +34,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">2. Description of Services</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">2. Description of Services</h2>
               <p className="mb-4">
                 Ring to Kitchen AI provides AI-powered voice agent technology that enables restaurants to automate phone interactions, including:
               </p>
@@ -51,7 +51,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">3. Account Registration and Eligibility</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">3. Account Registration and Eligibility</h2>
 
               <h3 className="font-bold text-xl text-primary-navy mb-3 mt-4">3.1 Eligibility</h3>
               <p className="mb-4">
@@ -71,7 +71,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">4. Subscription Plans and Billing</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">4. Subscription Plans and Billing</h2>
 
               <h3 className="font-bold text-xl text-primary-navy mb-3 mt-4">4.1 Pricing</h3>
               <p className="mb-4">
@@ -99,7 +99,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">5. Acceptable Use Policy</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">5. Acceptable Use Policy</h2>
               <p className="mb-4">You agree not to:</p>
               <ul className="list-disc ml-6 mb-4 space-y-2">
                 <li>Use our services for any illegal or unauthorized purpose</li>
@@ -116,7 +116,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">6. Intellectual Property Rights</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">6. Intellectual Property Rights</h2>
 
               <h3 className="font-bold text-xl text-primary-navy mb-3 mt-4">6.1 Our Property</h3>
               <p className="mb-4">
@@ -135,7 +135,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">7. Call Recording and Privacy</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">7. Call Recording and Privacy</h2>
               <p className="mb-4">
                 Our AI voice agents may record calls for quality assurance, training, and service improvement purposes. You are responsible for:
               </p>
@@ -150,7 +150,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">8. Service Level and Support</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">8. Service Level and Support</h2>
 
               <h3 className="font-bold text-xl text-primary-navy mb-3 mt-4">8.1 Service Availability</h3>
               <p className="mb-4">
@@ -164,7 +164,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">9. Disclaimers and Limitations of Liability</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">9. Disclaimers and Limitations of Liability</h2>
 
               <h3 className="font-bold text-xl text-primary-navy mb-3 mt-4">9.1 Disclaimer of Warranties</h3>
               <p className="mb-4">
@@ -186,7 +186,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">10. Indemnification</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">10. Indemnification</h2>
               <p className="mb-4">
                 You agree to indemnify, defend, and hold harmless Ring to Kitchen AI and its officers, directors, employees, and agents from any claims, liabilities, damages, losses, and expenses arising out of or related to:
               </p>
@@ -199,14 +199,14 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">11. Third-Party Services and Integrations</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">11. Third-Party Services and Integrations</h2>
               <p className="mb-4">
                 Our services may integrate with third-party platforms (POS systems, payment processors, etc.). We are not responsible for the functionality, availability, or practices of third-party services. Your use of third-party services is subject to their respective terms and policies.
               </p>
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">12. Termination</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">12. Termination</h2>
 
               <h3 className="font-bold text-xl text-primary-navy mb-3 mt-4">12.1 Termination by You</h3>
               <p className="mb-4">
@@ -225,7 +225,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">13. Dispute Resolution</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">13. Dispute Resolution</h2>
 
               <h3 className="font-bold text-xl text-primary-navy mb-3 mt-4">13.1 Governing Law</h3>
               <p className="mb-4">
@@ -244,14 +244,14 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">14. Changes to Terms</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">14. Changes to Terms</h2>
               <p className="mb-4">
                 We may modify these Terms at any time. We will provide notice of material changes by email or through our services. Your continued use of our services after changes become effective constitutes acceptance of the modified Terms.
               </p>
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">15. General Provisions</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">15. General Provisions</h2>
 
               <h3 className="font-bold text-xl text-primary-navy mb-3 mt-4">15.1 Entire Agreement</h3>
               <p className="mb-4">
@@ -275,7 +275,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-marcellus text-2xl text-primary-navy mb-4">16. Contact Information</h2>
+              <h2 className="font-inter text-2xl text-primary-navy mb-4">16. Contact Information</h2>
               <p className="mb-4">
                 If you have any questions about these Terms of Service, please contact us:
               </p>

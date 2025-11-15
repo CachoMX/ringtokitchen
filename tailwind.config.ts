@@ -15,7 +15,7 @@ const config: Config = {
         'soft-gray': '#E9E9E9',
       },
       fontFamily: {
-        marcellus: ['Marcellus', 'serif'],
+        inter: ['Poppins', 'sans-serif'],
         ttnorms: ['var(--font-tt-norms)', 'sans-serif'],
       },
     },

@@ -27,7 +27,7 @@ export default function BlogPage() {
         {/* Hero */}
         <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-marcellus text-5xl sm:text-6xl mb-6">
+          <h1 className="font-inter text-5xl sm:text-6xl mb-6">
             Restaurant AI Insights
           </h1>
           <p className="text-xl text-white/80">
@@ -111,7 +111,7 @@ export default function BlogPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-marcellus text-xl text-primary-navy mb-3 group-hover:text-energy-red transition line-clamp-2">
+                  <h3 className="font-inter text-xl text-primary-navy mb-3 group-hover:text-energy-red transition line-clamp-2">
                     {post.title}
                   </h3>
 
@@ -142,7 +142,7 @@ export default function BlogPage() {
       {/* CTA */}
       <section className="py-20 bg-soft-gray">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-marcellus text-4xl text-primary-navy mb-6">
+          <h2 className="font-inter text-4xl text-primary-navy mb-6">
             Ready to See AI in Action?
           </h2>
           <p className="text-lg text-gray-600 mb-8">

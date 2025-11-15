@@ -1,30 +1,20 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DemoModal from '@/components/DemoModal';
+import AnimatedIcon from '@/components/AnimatedIcon';
+import CounterAnimation from '@/components/CounterAnimation';
 import { VALUE_PROPOSITIONS, HOW_IT_WORKS_STEPS, PRICING_TIERS, TESTIMONIALS, USE_CASES } from '@/lib/constants';
 import { getAllBlogPosts } from '@/lib/blogData';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export default function HomePage() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const latestPosts = getAllBlogPosts().slice(0, 3);
-  const [animations, setAnimations] = useState<any[]>([null, null, null, null]);
 
-  useEffect(() => {
-    // Load animation files
-    Promise.all([
-      fetch('/animations/phone-ring.json').then(r => r.json()),
-      fetch('/animations/ai-process.json').then(r => r.json()),
-      fetch('/animations/checkmark.json').then(r => r.json()),
-      fetch('/animations/star.json').then(r => r.json()),
-    ]).then(setAnimations);
-  }, []);
+  const iconTypes: ('phone' | 'ai' | 'check' | 'sync')[] = ['phone', 'ai', 'check', 'sync'];
 
   return (
     <main className="min-h-screen">
@@ -59,7 +49,7 @@ export default function HomePage() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-marcellus text-5xl sm:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+          <h1 className="font-inter text-5xl sm:text-6xl lg:text-7xl text-white mb-6 leading-tight">
             Never Miss<br />
             <span className="bg-gradient-to-r from-energy-red to-[#FF6B4A] text-transparent bg-clip-text">Another Order</span>
           </h1>
@@ -110,7 +100,7 @@ export default function HomePage() {
       <section className="py-16 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-marcellus text-3xl sm:text-4xl text-primary-navy mb-3">
+            <h2 className="font-inter text-3xl sm:text-4xl text-primary-navy mb-3">
               Real Results from Real Restaurants
             </h2>
             <p className="text-lg text-gray-600">
@@ -120,25 +110,25 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6 rounded-xl bg-gradient-to-br from-energy-red/5 to-energy-red/10 border border-energy-red/20">
-              <div className="text-5xl font-bold text-energy-red mb-2">100%</div>
+              <CounterAnimation end={100} suffix="%" className="text-5xl font-bold text-energy-red mb-2" />
               <div className="text-sm text-gray-600 font-medium">Calls captured in queue</div>
               <div className="text-xs text-gray-500 mt-1">Never miss an order</div>
             </div>
 
             <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary-navy/5 to-primary-navy/10 border border-primary-navy/20">
-              <div className="text-5xl font-bold text-primary-navy mb-2">75%</div>
+              <CounterAnimation end={75} suffix="%" className="text-5xl font-bold text-primary-navy mb-2" />
               <div className="text-sm text-gray-600 font-medium">Reduction in labor costs</div>
               <div className="text-xs text-gray-500 mt-1">Per order efficiency gain</div>
             </div>
 
             <div className="text-center p-6 rounded-xl bg-gradient-to-br from-energy-red/5 to-energy-red/10 border border-energy-red/20">
-              <div className="text-5xl font-bold text-energy-red mb-2">25%</div>
+              <CounterAnimation end={25} suffix="%" className="text-5xl font-bold text-energy-red mb-2" />
               <div className="text-sm text-gray-600 font-medium">Increase in average check</div>
               <div className="text-xs text-gray-500 mt-1">AI-driven upselling</div>
             </div>
 
             <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary-navy/5 to-primary-navy/10 border border-primary-navy/20">
-              <div className="text-5xl font-bold text-primary-navy mb-2">20%</div>
+              <CounterAnimation end={20} suffix="%" className="text-5xl font-bold text-primary-navy mb-2" />
               <div className="text-sm text-gray-600 font-medium">Increase in repeat orders</div>
               <div className="text-xs text-gray-500 mt-1">Within first month</div>
             </div>
@@ -147,37 +137,44 @@ export default function HomePage() {
       </section>
 
       {/* Value Proposition Section */}
-      <section className="py-20 bg-soft-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
+        {/* Blurred colored background blobs */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-primary-navy to-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-energy-red to-orange-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-marcellus text-4xl sm:text-5xl text-primary-navy mb-4">
+            <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
               Why Restaurants Choose Ring to Kitchen AI
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-700">
               Restaurant-trained AI that understands your business
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-5xl mb-4">🎯</div>
-              <h3 className="font-marcellus text-2xl text-primary-navy mb-3">Restaurant-Trained AI</h3>
+            <div className="bg-white/80 backdrop-blur-md border border-white/60 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+              <div className="text-5xl mb-4 flex justify-center">🎯</div>
+              <h3 className="font-inter text-2xl text-primary-navy mb-3">Restaurant-Trained AI</h3>
               <p className="text-gray-600 leading-relaxed">
                 Understands "extra cheese," "gluten-free crust," and complex restaurant conversations. 99% accuracy on food orders.
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-5xl mb-4">🔧</div>
-              <h3 className="font-marcellus text-2xl text-primary-navy mb-3">Works Your Way</h3>
+            <div className="bg-white/80 backdrop-blur-md border border-white/60 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+              <div className="text-5xl mb-4 flex justify-center">🔧</div>
+              <h3 className="font-inter text-2xl text-primary-navy mb-3">Works Your Way</h3>
               <p className="text-gray-600 leading-relaxed">
                 Complete standalone solution or seamless integration with your existing POS. You choose what works for your restaurant.
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-5xl mb-4">📈</div>
-              <h3 className="font-marcellus text-2xl text-primary-navy mb-3">Proven Results</h3>
+            <div className="bg-white/80 backdrop-blur-md border border-white/60 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+              <div className="text-5xl mb-4 flex justify-center">📈</div>
+              <h3 className="font-inter text-2xl text-primary-navy mb-3">Proven Results</h3>
               <p className="text-gray-600 leading-relaxed">
                 30% average increase in phone orders, 99.9% uptime, and enterprise-grade reliability. Real restaurants, real results.
               </p>
@@ -196,7 +193,7 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-marcellus text-4xl sm:text-5xl text-primary-navy mb-4">
+            <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
               How It Works
             </h2>
             <p className="text-lg text-gray-600">
@@ -227,23 +224,13 @@ export default function HomePage() {
                 <div className="relative mb-6">
                   <div className="absolute inset-0 bg-gradient-to-br from-energy-red/10 to-primary-navy/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                   <div className="relative rounded-2xl w-24 h-24 mx-auto flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-500">
-                    {animations[idx] ? (
-                      <Lottie
-                        animationData={animations[idx]}
-                        loop={true}
-                        style={{ width: 100, height: 100 }}
-                      />
-                    ) : (
-                      <div className="w-20 h-20 bg-gradient-to-br from-primary-navy to-primary-navy/80 rounded-2xl flex items-center justify-center text-4xl animate-pulse">
-                        <span className="filter drop-shadow-lg">{step.icon}</span>
-                      </div>
-                    )}
+                    <AnimatedIcon type={iconTypes[idx]} size={80} />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="text-center">
-                  <h3 className="font-marcellus text-xl text-primary-navy mb-3 group-hover:text-energy-red transition-colors duration-300">
+                  <h3 className="font-inter text-xl text-primary-navy mb-3 group-hover:text-energy-red transition-colors duration-300">
                     {step.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
@@ -284,7 +271,7 @@ export default function HomePage() {
       <section id="pricing" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-marcellus text-4xl sm:text-5xl text-primary-navy mb-4">
+            <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
               Simple, Transparent Pricing
             </h2>
             <p className="text-lg text-gray-600">
@@ -309,13 +296,13 @@ export default function HomePage() {
                 )}
 
                 <div className="p-8">
-                  <h3 className="font-marcellus text-2xl text-primary-navy mb-2">{tier.name}</h3>
+                  <h3 className="font-inter text-2xl text-primary-navy mb-2">{tier.name}</h3>
                   <p className="text-gray-600 text-sm mb-6">{tier.description}</p>
 
                   {/* Price */}
                   {tier.price !== null ? (
-                    <div className="mb-6">
-                      <span className="font-marcellus text-5xl text-primary-navy">${tier.price}</span>
+                    <div className="mb-6 text-center">
+                      <span className="font-inter text-5xl text-primary-navy">${tier.price}</span>
                       <span className="text-gray-600">/month</span>
                     </div>
                   ) : (
@@ -363,17 +350,25 @@ export default function HomePage() {
       </section>
 
       {/* Use Cases */}
-      <section className="py-20 bg-soft-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-energy-red via-orange-500 to-pink-500 relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-yellow-300 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-orange-300 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-marcellus text-4xl sm:text-5xl text-primary-navy mb-4">
+            <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4 drop-shadow-lg">
               Perfect For Every Restaurant Type
             </h2>
+            <p className="text-white/90 text-lg">From food trucks to fine dining, we've got you covered</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {USE_CASES.map((useCase, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
+              <div key={idx} className="bg-white/95 backdrop-blur rounded-xl p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/50">
                 <div className="text-4xl mb-3">{useCase.icon}</div>
                 <h3 className="font-bold text-primary-navy mb-2">{useCase.title}</h3>
                 <p className="text-sm text-gray-600">{useCase.description}</p>
@@ -387,7 +382,7 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-marcellus text-4xl sm:text-5xl text-primary-navy mb-4">
+            <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
               Loved by Restaurant Owners
             </h2>
           </div>
@@ -423,7 +418,7 @@ export default function HomePage() {
       <section className="py-20 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-marcellus text-4xl sm:text-5xl text-primary-navy mb-4">
+            <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
               Latest Insights
             </h2>
             <p className="text-lg text-gray-600">
@@ -446,7 +441,7 @@ export default function HomePage() {
                     <span className="bg-energy-red text-white text-xs px-2 py-1 rounded">{post.category}</span>
                     <span className="text-sm text-gray-500">{post.readTime}</span>
                   </div>
-                  <h3 className="font-marcellus text-xl text-primary-navy mb-2 group-hover:text-energy-red transition">
+                  <h3 className="font-inter text-xl text-primary-navy mb-2 group-hover:text-energy-red transition">
                     {post.title}
                   </h3>
                   <p className="text-sm text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
@@ -467,7 +462,7 @@ export default function HomePage() {
       {/* Final CTA */}
       <section className="py-20 bg-gradient-to-r from-primary-navy to-energy-red text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-marcellus text-4xl sm:text-5xl mb-6">
+          <h2 className="font-inter text-4xl sm:text-5xl mb-6">
             Ready to Transform Your Restaurant?
           </h2>
           <p className="text-xl mb-8 text-white/90">

@@ -50,7 +50,7 @@ export default function PricingPage() {
         {/* Hero */}
         <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-marcellus text-5xl sm:text-6xl mb-6">
+          <h1 className="font-inter text-5xl sm:text-6xl mb-6">
             Simple, Transparent Pricing
           </h1>
           <p className="text-xl text-white/80">
@@ -79,18 +79,18 @@ export default function PricingPage() {
                 )}
 
                 <div className="p-8">
-                  <h3 className="font-marcellus text-2xl text-primary-navy mb-2">{tier.name}</h3>
+                  <h3 className="font-inter text-2xl text-primary-navy mb-2">{tier.name}</h3>
                   <p className="text-gray-600 text-sm mb-6">{tier.description}</p>
 
                   {/* Price */}
                   {tier.price !== null ? (
                     <div className="mb-6">
-                      <span className="font-marcellus text-5xl text-primary-navy">${tier.price}</span>
+                      <span className="font-inter text-5xl text-primary-navy">${tier.price}</span>
                       <span className="text-gray-600">/month</span>
                     </div>
                   ) : (
                     <div className="mb-6 py-4">
-                      <p className="font-marcellus text-3xl text-primary-navy">Custom</p>
+                      <p className="font-inter text-3xl text-primary-navy">Custom</p>
                       <p className="text-sm text-gray-600">Based on your needs</p>
                     </div>
                   )}
@@ -143,7 +143,7 @@ export default function PricingPage() {
       {/* Feature Comparison */}
       <section className="py-20 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-marcellus text-4xl text-primary-navy text-center mb-12">
+          <h2 className="font-inter text-4xl text-primary-navy text-center mb-12">
             Full Feature Comparison
           </h2>
 
@@ -186,7 +186,7 @@ export default function PricingPage() {
       {/* FAQ */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-marcellus text-4xl text-primary-navy text-center mb-12">
+          <h2 className="font-inter text-4xl text-primary-navy text-center mb-12">
             Frequently Asked Questions
           </h2>
 
@@ -214,7 +214,7 @@ export default function PricingPage() {
       {/* Final CTA */}
       <section className="py-20 bg-gradient-to-r from-primary-navy to-energy-red text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-marcellus text-4xl sm:text-5xl mb-6">
+          <h2 className="font-inter text-4xl sm:text-5xl mb-6">
             Still Not Sure? Let's Talk.
           </h2>
           <p className="text-xl mb-8 text-white/90">

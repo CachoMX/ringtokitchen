@@ -112,7 +112,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
               ✕
             </button>
 
-            <h2 className="font-marcellus text-3xl text-primary-navy mb-2">Schedule Your Demo</h2>
+            <h2 className="font-inter text-3xl text-primary-navy mb-2">Schedule Your Demo</h2>
             <p className="text-gray-600 mb-8">
               Let's find the perfect time to see Ring to Kitchen AI in action.
             </p>
@@ -270,7 +270,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
               ✕
             </button>
 
-            <h2 className="font-marcellus text-3xl text-primary-navy mb-4">Pick Your Time</h2>
+            <h2 className="font-inter text-3xl text-primary-navy mb-4">Pick Your Time</h2>
             <p className="text-gray-600 mb-6">
               Thanks {formData.firstName}! Select a time that works best for you:
             </p>
