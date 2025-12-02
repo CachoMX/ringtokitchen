@@ -30,10 +30,10 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-primary-navy/80 z-0"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full relative z-10">
-          <h1 className="font-inter text-5xl sm:text-6xl mb-6">
-            Restaurant AI Insights
+          <h1 className="font-inter text-5xl sm:text-6xl mb-6" style={{ textShadow: '0 0 4px rgba(255,255,255,0.3), 0 0 8px rgba(255,255,255,0.2)' }}>
+            Restaurant <span className="text-energy-red">AI Insights</span>
           </h1>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-white/80" style={{ textShadow: '0 0 3px rgba(255,255,255,0.25), 0 0 6px rgba(255,255,255,0.15)' }}>
             Stay ahead of the industry with expert tips, case studies, and technology insights
           </p>
         </div>

@@ -50,13 +50,13 @@ export default function PricingPage() {
         {/* Hero */}
         <section className="py-20 text-white relative overflow-hidden flex items-center" style={{ minHeight: '800px', backgroundImage: 'url(/calle2.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         {/* Overlay naranja quemado para mantener legibilidad del texto */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#C13515]/90 via-[#B8401F]/85 to-[#CC4A28]/80 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#C13515]/70 via-[#B8401F]/50 to-[#CC4A28]/30 z-0"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
-          <h1 className="font-inter text-5xl sm:text-6xl mb-6">
-            Simple, Transparent Pricing
+          <h1 className="font-inter text-5xl sm:text-6xl mb-6 whitespace-nowrap" style={{ textShadow: '0 0 4px rgba(255,255,255,0.3), 0 0 8px rgba(255,255,255,0.2)' }}>
+            Simple, <span className="text-primary-navy">Transparent Pricing</span>
           </h1>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-white/80" style={{ textShadow: '0 0 3px rgba(255,255,255,0.25), 0 0 6px rgba(255,255,255,0.15)' }}>
             No hidden fees. No long-term contracts. Cancel anytime.
           </p>
         </div>
