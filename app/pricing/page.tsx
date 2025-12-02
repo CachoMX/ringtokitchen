@@ -48,9 +48,9 @@ export default function PricingPage() {
 
       <div className="pt-24">
         {/* Hero */}
-        <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c] text-white relative overflow-hidden flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/calle.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        {/* Overlay para mantener legibilidad del texto */}
-        <div className="absolute inset-0 bg-primary-navy/80 z-0"></div>
+        <section className="py-20 text-white relative overflow-hidden flex items-center" style={{ minHeight: '800px', backgroundImage: 'url(/calle2.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* Overlay naranja quemado para mantener legibilidad del texto */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#C13515]/90 via-[#B8401F]/85 to-[#CC4A28]/80 z-0"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
           <h1 className="font-inter text-5xl sm:text-6xl mb-6">
@@ -63,8 +63,20 @@ export default function PricingPage() {
       </section>
 
       {/* Pricing Tiers */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image with Blur */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: 'url(/onda.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'blur(2px)',
+            opacity: 0.3
+          }}
+        ></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-6">
             {PRICING_TIERS.map((tier, idx) => (
               <div
@@ -215,7 +227,7 @@ export default function PricingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 relative overflow-hidden text-white">
+      <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px' }}>
         {/* Video Background */}
         <div className="absolute inset-0 overflow-hidden">
           <video
@@ -223,8 +235,8 @@ export default function PricingPage() {
             loop
             muted
             playsInline
-            className="absolute h-full object-cover"
-            style={{ minWidth: '100%', width: 'auto', left: '50%', transform: 'translateX(-60%)' }}
+            className="absolute w-full h-full object-cover"
+            style={{ objectFit: 'cover' }}
           >
             <source src="/Chica.mp4" type="video/mp4" />
           </video>

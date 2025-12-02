@@ -28,7 +28,7 @@ export default function HomePage() {
 
       <div className="pt-24">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary-navy to-[#0d1f3c] overflow-hidden flex items-center" style={{ minHeight: '600px' }}>
+        <section className="relative bg-gradient-to-br from-primary-navy to-[#0d1f3c] overflow-hidden flex items-center" style={{ minHeight: '800px' }}>
         {/* Background Image with Blur Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary-navy/90 via-primary-navy/60 to-transparent z-10"></div>
@@ -159,43 +159,52 @@ export default function HomePage() {
       </section>
 
       {/* Value Proposition Section */}
-      <section className="py-20 relative overflow-hidden border-t border-gray-200">
-        {/* White to Orange Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-orange-50 to-energy-red/60"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-20 bg-gradient-to-br from-energy-red via-[#F17A5C] to-[#FF9470]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
-              Why Restaurants Choose Ring to Kitchen AI
+            <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
+              Why Restaurants Choose <br />Ring to Kitchen AI
             </h2>
-            <p className="text-lg text-gray-700">
+            <p className="text-xl text-white/90">
               Restaurant-trained AI that understands your business
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white/80 backdrop-blur-md border border-white/60 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-              <div className="text-5xl mb-4 flex justify-center">🎯</div>
-              <h3 className="font-inter text-2xl text-primary-navy mb-3">Restaurant-Trained AI</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Understands "extra cheese," "gluten-free crust," and complex restaurant conversations. 99% accuracy on food orders.
-              </p>
+          <div className="space-y-8">
+            <div className="flex items-center gap-6">
+              <svg className="w-12 h-12 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+              </svg>
+              <div className="border-l-4 border-white pl-6 py-2 flex-1">
+                <h3 className="font-inter text-2xl text-white mb-2 font-bold">Restaurant-Trained AI</h3>
+                <p className="text-white/90 text-lg leading-relaxed">
+                  Understands "extra cheese," "gluten-free crust," and complex restaurant conversations. 99% accuracy on food orders.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-md border border-white/60 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-              <div className="text-5xl mb-4 flex justify-center">🔧</div>
-              <h3 className="font-inter text-2xl text-primary-navy mb-3">Works Your Way</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Complete standalone solution or seamless integration with your existing POS. You choose what works for your restaurant.
-              </p>
+            <div className="flex items-center gap-6">
+              <svg className="w-12 h-12 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+              </svg>
+              <div className="border-l-4 border-white pl-6 py-2 flex-1">
+                <h3 className="font-inter text-2xl text-white mb-2 font-bold">Works Your Way</h3>
+                <p className="text-white/90 text-lg leading-relaxed">
+                  Complete standalone solution or seamless integration with your existing POS. You choose what works for your restaurant.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-md border border-white/60 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-              <div className="text-5xl mb-4 flex justify-center">📈</div>
-              <h3 className="font-inter text-2xl text-primary-navy mb-3">Proven Results</h3>
-              <p className="text-gray-600 leading-relaxed">
-                30% average increase in phone orders, 99.9% uptime, and enterprise-grade reliability. Real restaurants, real results.
-              </p>
+            <div className="flex items-center gap-6">
+              <svg className="w-12 h-12 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+              <div className="border-l-4 border-white pl-6 py-2 flex-1">
+                <h3 className="font-inter text-2xl text-white mb-2 font-bold">Proven Results</h3>
+                <p className="text-white/90 text-lg leading-relaxed">
+                  30% average increase in phone orders, 99.9% uptime, and enterprise-grade reliability. Real restaurants, real results.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -400,8 +409,8 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/pricing" className="text-energy-red hover:underline font-bold">
-              View full feature comparison →
+            <Link href="/pricing" className="inline-block bg-primary-navy text-white px-8 py-4 rounded-lg hover:bg-energy-red hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg">
+              View full feature comparison
             </Link>
           </div>
         </div>
@@ -580,12 +589,12 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 text-primary-navy relative overflow-hidden" style={{ backgroundImage: 'url(/8.png)', backgroundSize: '150%', backgroundPosition: 'right center' }}>
-        {/* Degradado de izquierda a derecha */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-0"></div>
+      <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/salema.png)', backgroundSize: '150%', backgroundPosition: 'right center' }}>
+        {/* White Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-10"></div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="font-inter text-4xl sm:text-5xl mb-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 w-full">
+          <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-primary-navy">
             Ready to Transform Your Restaurant?
           </h2>
           <p className="text-xl mb-8 text-gray-700">

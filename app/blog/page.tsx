@@ -25,7 +25,7 @@ export default function BlogPage() {
 
       <div className="pt-24">
         {/* Hero */}
-        <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c] text-white flex items-center relative overflow-hidden" style={{ minHeight: '600px', backgroundImage: 'url(/chef.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c] text-white flex items-center relative overflow-hidden" style={{ minHeight: '800px', backgroundImage: 'url(/chef.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         {/* Overlay para mantener legibilidad del texto */}
         <div className="absolute inset-0 bg-primary-navy/80 z-0"></div>
 
@@ -143,11 +143,11 @@ export default function BlogPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundImage: 'url(/vino 2.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section className="relative overflow-hidden flex items-center" style={{ backgroundImage: 'url(/vino2.png)', backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '600px' }}>
         {/* White Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-white/30 z-0"></div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
           <h2 className="font-inter text-4xl text-primary-navy mb-6">
             Ready to See AI in Action?
           </h2>
