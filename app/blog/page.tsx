@@ -25,8 +25,11 @@ export default function BlogPage() {
 
       <div className="pt-24">
         {/* Hero */}
-        <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c] text-white flex items-center relative overflow-hidden" style={{ minHeight: '600px', backgroundImage: 'url(/chef.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* Overlay para mantener legibilidad del texto */}
+        <div className="absolute inset-0 bg-primary-navy/80 z-0"></div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full relative z-10">
           <h1 className="font-inter text-5xl sm:text-6xl mb-6">
             Restaurant AI Insights
           </h1>
@@ -44,7 +47,7 @@ export default function BlogPage() {
               onClick={() => setSelectedCategory(null)}
               className={`px-4 py-2 rounded-full font-bold text-sm transition ${
                 selectedCategory === null
-                  ? 'bg-energy-red text-white hover:bg-[#E63D23]'
+                  ? 'bg-energy-red text-white hover:bg-primary-navy hover:text-white'
                   : 'bg-white text-primary-navy hover:bg-gray-100 border border-gray-300'
               }`}
             >
@@ -58,7 +61,7 @@ export default function BlogPage() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full font-bold text-sm transition ${
                     selectedCategory === category
-                      ? 'bg-energy-red text-white hover:bg-[#E63D23]'
+                      ? 'bg-energy-red text-white hover:bg-primary-navy hover:text-white'
                       : 'bg-white text-primary-navy hover:bg-gray-100 border border-gray-300'
                   }`}
                 >
@@ -140,17 +143,20 @@ export default function BlogPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-soft-gray">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundImage: 'url(/vino 2.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* White Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-0"></div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="font-inter text-4xl text-primary-navy mb-6">
             Ready to See AI in Action?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg text-gray-700 mb-8">
             Transform your restaurant operations with Ring to Kitchen AI
           </p>
           <button
             onClick={() => setIsDemoModalOpen(true)}
-            className="bg-energy-red text-white px-8 py-4 rounded-lg hover:bg-[#E63D23] transition font-bold text-lg"
+            className="bg-energy-red text-white px-8 py-4 rounded-lg hover:bg-primary-navy hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
           >
             Schedule Demo
           </button>

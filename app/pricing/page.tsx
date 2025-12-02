@@ -48,8 +48,11 @@ export default function PricingPage() {
 
       <div className="pt-24">
         {/* Hero */}
-        <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c] text-white relative overflow-hidden flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/calle.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* Overlay para mantener legibilidad del texto */}
+        <div className="absolute inset-0 bg-primary-navy/80 z-0"></div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
           <h1 className="font-inter text-5xl sm:text-6xl mb-6">
             Simple, Transparent Pricing
           </h1>
@@ -106,8 +109,8 @@ export default function PricingPage() {
                     onClick={() => setIsDemoModalOpen(true)}
                     className={`w-full py-3 rounded-lg font-bold transition mb-8 ${
                       tier.highlighted
-                        ? 'bg-energy-red text-white hover:bg-[#E63D23]'
-                        : 'bg-soft-gray text-primary-navy hover:bg-gray-300'
+                        ? 'bg-energy-red text-white hover:bg-primary-navy hover:text-white'
+                        : 'bg-soft-gray text-primary-navy hover:bg-primary-navy hover:text-white'
                     }`}
                   >
                     {tier.cta}
@@ -225,20 +228,20 @@ export default function PricingPage() {
           >
             <source src="/Chica.mp4" type="video/mp4" />
           </video>
-          {/* Orange Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-energy-red/85 via-orange-500/75 to-energy-red/85 z-10"></div>
+          {/* White Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-10"></div>
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
-          <h2 className="font-inter text-4xl sm:text-5xl mb-6">
+          <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-primary-navy">
             Still Not Sure? Let's Talk.
           </h2>
-          <p className="text-xl mb-8 text-white/90">
+          <p className="text-xl mb-8 text-gray-700">
             Schedule a personalized demo and see Ring to Kitchen AI in action
           </p>
           <button
             onClick={() => setIsDemoModalOpen(true)}
-            className="bg-white text-primary-navy px-8 py-4 rounded-lg hover:bg-gray-100 transition font-bold text-lg"
+            className="bg-energy-red text-white px-8 py-4 rounded-lg hover:bg-primary-navy hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
           >
             Schedule Demo
           </button>

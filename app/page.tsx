@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DemoModal from '@/components/DemoModal';
-import AnimatedIcon from '@/components/AnimatedIcon';
 import CounterAnimation from '@/components/CounterAnimation';
 import { VALUE_PROPOSITIONS, HOW_IT_WORKS_STEPS, PRICING_TIERS, TESTIMONIALS, USE_CASES } from '@/lib/constants';
 import { getAllBlogPosts } from '@/lib/blogData';
@@ -12,9 +11,16 @@ import Link from 'next/link';
 
 export default function HomePage() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const latestPosts = getAllBlogPosts().slice(0, 3);
 
-  const iconTypes: ('phone' | 'ai' | 'check' | 'sync')[] = ['phone', 'ai', 'check', 'sync'];
+  const stepIcons = ['10.png', '3.png', '4.png', '7.png'];
+
+  const handleCardFlip = (index: number) => {
+    if (!flippedCards.includes(index)) {
+      setFlippedCards([...flippedCards, index]);
+    }
+  };
 
   return (
     <main className="min-h-screen">
@@ -22,7 +28,7 @@ export default function HomePage() {
 
       <div className="pt-24">
         {/* Hero Section */}
-        <section className="relative min-h-screen bg-gradient-to-br from-primary-navy to-[#0d1f3c] overflow-hidden flex items-center">
+        <section className="relative bg-gradient-to-br from-primary-navy to-[#0d1f3c] overflow-hidden flex items-center" style={{ minHeight: '600px' }}>
         {/* Background Image with Blur Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary-navy/90 via-primary-navy/60 to-transparent z-10"></div>
@@ -89,7 +95,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <button
               onClick={() => setIsDemoModalOpen(true)}
-              className="bg-energy-red hover:bg-white hover:text-energy-red text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-energy-red hover:bg-primary-navy hover:text-white text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Schedule Demo
             </button>
@@ -110,8 +116,11 @@ export default function HomePage() {
       </section>
 
       {/* Results Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white relative overflow-hidden" style={{ backgroundImage: 'url(/15.png)', backgroundSize: '80%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+        {/* Overlay blanco para mantener legibilidad */}
+        <div className="absolute inset-0 bg-white/85 z-0"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="font-inter text-3xl sm:text-4xl text-primary-navy mb-3">
               Real Results from Real Restaurants
@@ -122,25 +131,25 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-energy-red/5 to-energy-red/10 border border-energy-red/20">
+            <div className="text-center p-6 rounded-xl bg-white border border-energy-red/20 shadow-lg">
               <CounterAnimation end={100} suffix="%" className="text-5xl font-bold text-energy-red mb-2" />
               <div className="text-sm text-gray-600 font-medium">Calls captured in queue</div>
               <div className="text-xs text-gray-500 mt-1">Never miss an order</div>
             </div>
 
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary-navy/5 to-primary-navy/10 border border-primary-navy/20">
+            <div className="text-center p-6 rounded-xl bg-white border border-primary-navy/20 shadow-lg">
               <CounterAnimation end={75} suffix="%" className="text-5xl font-bold text-primary-navy mb-2" />
               <div className="text-sm text-gray-600 font-medium">Reduction in labor costs</div>
               <div className="text-xs text-gray-500 mt-1">Per order efficiency gain</div>
             </div>
 
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-energy-red/5 to-energy-red/10 border border-energy-red/20">
+            <div className="text-center p-6 rounded-xl bg-white border border-energy-red/20 shadow-lg">
               <CounterAnimation end={25} suffix="%" className="text-5xl font-bold text-energy-red mb-2" />
               <div className="text-sm text-gray-600 font-medium">Increase in average check</div>
               <div className="text-xs text-gray-500 mt-1">AI-driven upselling</div>
             </div>
 
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary-navy/5 to-primary-navy/10 border border-primary-navy/20">
+            <div className="text-center p-6 rounded-xl bg-white border border-primary-navy/20 shadow-lg">
               <CounterAnimation end={20} suffix="%" className="text-5xl font-bold text-primary-navy mb-2" />
               <div className="text-sm text-gray-600 font-medium">Increase in repeat orders</div>
               <div className="text-xs text-gray-500 mt-1">Within first month</div>
@@ -193,12 +202,7 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-20 bg-gradient-to-br from-soft-gray via-white to-soft-gray relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-energy-red rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-navy rounded-full blur-3xl"></div>
-        </div>
+      <section id="how-it-works" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#E9E9E9' }}>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -214,41 +218,61 @@ export default function HomePage() {
             {HOW_IT_WORKS_STEPS.map((step, idx) => (
               <div
                 key={idx}
-                className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100"
+                className="flip-card-container h-80"
                 style={{
-                  animation: `fadeInUp 0.6s ease-out ${idx * 0.15}s both`
+                  animation: `fadeInUp 0.6s ease-out ${idx * 0.15}s both`,
+                  perspective: '1000px'
                 }}
               >
-                {/* Step number badge - top right */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-energy-red to-[#E63D23] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  {step.number}
-                </div>
-
                 {/* Connecting line for desktop */}
                 {idx < HOW_IT_WORKS_STEPS.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-energy-red/50 to-transparent"></div>
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-energy-red/50 to-transparent z-0"></div>
                 )}
 
-                {/* Icon with animated gradient background */}
-                <div className="relative mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-br from-energy-red/10 to-primary-navy/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                  <div className="relative rounded-2xl w-24 h-24 mx-auto flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-500">
-                    <AnimatedIcon type={iconTypes[idx]} size={80} />
+                <div
+                  className={`flip-card group relative w-full h-full ${flippedCards.includes(idx) ? 'flipped' : ''}`}
+                  onMouseEnter={() => handleCardFlip(idx)}
+                >
+                  <div className="flip-card-inner relative w-full h-full transition-transform duration-700">
+
+                    {/* CARA FRONTAL - Azul con número */}
+                    <div className="flip-card-front absolute w-full h-full">
+                      <div className="w-full h-full bg-primary-navy rounded-2xl shadow-lg flex items-center justify-center border-2 border-primary-navy">
+                        <span className="flip-number text-white font-bold transition-colors duration-300" style={{ fontSize: '8rem' }}>
+                          {step.number}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* CARA TRASERA - Contenido actual */}
+                    <div className="flip-card-back absolute w-full h-full">
+                      <div className="w-full h-full bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                        {/* Icon with animated gradient background */}
+                        <div className="relative mb-6">
+                          <div className="absolute inset-0 bg-gradient-to-br from-energy-red/10 to-primary-navy/10 rounded-full blur-xl transition-all duration-500"></div>
+                          <div className="relative rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-lg">
+                            <img
+                              src={`/${stepIcons[idx]}`}
+                              alt={step.title}
+                              className="w-28 h-28 object-contain"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Content */}
+                        <div className="text-center">
+                          <h3 className="font-inter text-xl text-primary-navy mb-3">
+                            {step.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
-
-                {/* Content */}
-                <div className="text-center">
-                  <h3 className="font-inter text-xl text-primary-navy mb-3 group-hover:text-energy-red transition-colors duration-300">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-energy-red/5 to-primary-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
             ))}
           </div>
@@ -265,6 +289,31 @@ export default function HomePage() {
               transform: translateY(0);
             }
           }
+
+          /* Flip Card Styles */
+          .flip-card-inner {
+            transform-style: preserve-3d;
+          }
+
+          .flip-card:hover .flip-card-inner,
+          .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+          }
+
+          .flip-card:hover .flip-number {
+            color: #F04833;
+          }
+
+          .flip-card-front,
+          .flip-card-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+          }
+
+          .flip-card-back {
+            transform: rotateY(180deg);
+          }
+
           @keyframes float {
             0%, 100% {
               transform: translateY(0px);
@@ -325,8 +374,8 @@ export default function HomePage() {
                     onClick={() => setIsDemoModalOpen(true)}
                     className={`w-full py-3 rounded-lg font-bold transition mb-8 ${
                       tier.highlighted
-                        ? 'bg-energy-red text-white hover:bg-[#E63D23]'
-                        : 'bg-soft-gray text-primary-navy hover:bg-gray-300'
+                        ? 'bg-energy-red text-white hover:bg-primary-navy hover:text-white'
+                        : 'bg-soft-gray text-primary-navy hover:bg-primary-navy hover:text-white'
                     }`}
                   >
                     {tier.cta}
@@ -425,10 +474,17 @@ export default function HomePage() {
               };
 
               return (
-                <div key={idx} className="bg-white/95 backdrop-blur rounded-xl p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/50">
-                  <div className="text-energy-red mb-3">{getIcon(useCase.title)}</div>
-                  <h3 className="font-bold text-primary-navy mb-2">{useCase.title}</h3>
-                  <p className="text-sm text-gray-600">{useCase.description}</p>
+                <div key={idx} className="relative">
+                  {/* Connecting line for desktop */}
+                  {idx < USE_CASES.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-energy-red/50 to-transparent z-0"></div>
+                  )}
+
+                  <div className="bg-white/95 backdrop-blur rounded-xl p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/50">
+                    <div className="text-energy-red mb-3">{getIcon(useCase.title)}</div>
+                    <h3 className="font-bold text-primary-navy mb-2">{useCase.title}</h3>
+                    <p className="text-sm text-gray-600">{useCase.description}</p>
+                  </div>
                 </div>
               );
             })}
@@ -437,8 +493,11 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden" style={{ backgroundImage: 'url(/14.png)', backgroundSize: 'cover', backgroundPosition: 'center top' }}>
+        {/* Overlay blanco sólido */}
+        <div className="absolute inset-0 bg-white z-0"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
               Loved by Restaurant Owners
@@ -473,8 +532,11 @@ export default function HomePage() {
       </section>
 
       {/* Blog Preview */}
-      <section className="py-20 bg-soft-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#E5D4C1', backgroundImage: 'url(/14.png)', backgroundSize: 'cover', backgroundPosition: 'center bottom' }}>
+        {/* Overlay beige sólido */}
+        <div className="absolute inset-0 z-0" style={{ backgroundColor: '#E5D4C1' }}></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
               Latest Insights
@@ -518,24 +580,27 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-energy-red text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 text-primary-navy relative overflow-hidden" style={{ backgroundImage: 'url(/8.png)', backgroundSize: '150%', backgroundPosition: 'right center' }}>
+        {/* Degradado de izquierda a derecha */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-0"></div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="font-inter text-4xl sm:text-5xl mb-6">
             Ready to Transform Your Restaurant?
           </h2>
-          <p className="text-xl mb-8 text-white/90">
+          <p className="text-xl mb-8 text-gray-700">
             Join 100+ restaurants already using Ring to Kitchen AI
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => setIsDemoModalOpen(true)}
-              className="bg-white text-primary-navy px-8 py-4 rounded-lg hover:bg-primary-navy hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
+              className="bg-energy-red text-white px-8 py-4 rounded-lg hover:bg-primary-navy hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
             >
               Schedule Demo
             </button>
             <Link
               href="/pricing"
-              className="border-2 border-white text-white hover:bg-primary-navy hover:scale-105 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center shadow-lg"
+              className="border-2 border-primary-navy text-primary-navy hover:bg-primary-navy hover:text-white hover:scale-105 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center shadow-lg"
             >
               View Pricing
             </Link>

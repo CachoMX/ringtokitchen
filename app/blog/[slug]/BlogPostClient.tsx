@@ -134,7 +134,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
           </p>
           <button
             onClick={() => setIsDemoModalOpen(true)}
-            className="bg-energy-red text-white px-8 py-3 rounded-lg hover:bg-[#E63D23] transition font-bold"
+            className="bg-energy-red text-white px-8 py-3 rounded-lg hover:bg-primary-navy hover:text-white transition font-bold"
           >
             Schedule Demo
           </button>

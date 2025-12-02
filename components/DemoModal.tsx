@@ -99,10 +99,33 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto my-8">
+      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto my-8 relative overflow-hidden">
+        {/* Background Pattern - Neuroscience Waves */}
+        <div className="absolute inset-0 bg-energy-red z-0">
+          <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="neuroWaves" x="0" y="0" width="200" height="100" patternUnits="userSpaceOnUse">
+                {/* Wave 1 */}
+                <path d="M0,50 Q25,30 50,50 T100,50 T150,50 T200,50" stroke="white" strokeWidth="2" fill="none" opacity="0.6"/>
+                {/* Wave 2 */}
+                <path d="M0,60 Q30,40 60,60 T120,60 T180,60" stroke="white" strokeWidth="1.5" fill="none" opacity="0.4"/>
+                {/* Wave 3 */}
+                <path d="M0,70 Q20,55 40,70 T80,70 T120,70 T160,70 T200,70" stroke="white" strokeWidth="1" fill="none" opacity="0.3"/>
+                {/* Neural connections dots */}
+                <circle cx="50" cy="50" r="3" fill="white" opacity="0.5"/>
+                <circle cx="100" cy="50" r="2" fill="white" opacity="0.4"/>
+                <circle cx="150" cy="50" r="2.5" fill="white" opacity="0.3"/>
+                <circle cx="60" cy="60" r="2" fill="white" opacity="0.4"/>
+                <circle cx="120" cy="60" r="2" fill="white" opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#neuroWaves)"/>
+          </svg>
+        </div>
+
         {/* Step 1: Email Capture */}
         {step === 1 && (
-          <div className="p-8">
+          <div className="p-8 relative z-10 bg-white/95 backdrop-blur-sm rounded-2xl">
             {/* Close Button */}
             <button
               onClick={handleClose}
@@ -247,7 +270,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-energy-red text-white px-6 py-4 rounded-lg hover:bg-[#E63D23] transition font-bold text-lg mt-6"
+                className="w-full bg-energy-red text-white px-6 py-4 rounded-lg hover:bg-primary-navy hover:text-white transition font-bold text-lg mt-6"
               >
                 Continue to Schedule
               </button>
@@ -261,7 +284,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
 
         {/* Step 2: Calendly */}
         {step === 2 && (
-          <div className="p-8">
+          <div className="p-8 relative z-10 bg-white/95 backdrop-blur-sm rounded-2xl">
             <button
               onClick={handleClose}
               className="float-right text-gray-400 hover:text-gray-600 text-2xl leading-none"

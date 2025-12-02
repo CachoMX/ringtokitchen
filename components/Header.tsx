@@ -59,7 +59,7 @@ export default function Header({ onDemoClick }: HeaderProps) {
           </a>
           <button
             onClick={onDemoClick}
-            className="hidden sm:inline-block bg-energy-red text-white px-6 py-2.5 rounded hover:bg-primary-navy hover:scale-105 transition-all duration-300 font-bold text-sm shadow-lg"
+            className="hidden sm:inline-block bg-energy-red text-white px-6 py-2.5 rounded hover:bg-primary-navy hover:text-white hover:scale-105 transition-all duration-300 font-bold text-sm shadow-lg"
           >
             Schedule Demo
           </button>
@@ -95,7 +95,7 @@ export default function Header({ onDemoClick }: HeaderProps) {
             </a>
             <button
               onClick={onDemoClick}
-              className="w-full bg-energy-red text-white px-4 py-2 rounded hover:bg-primary-navy hover:scale-105 transition-all duration-300 font-bold mt-4 shadow-lg"
+              className="w-full bg-energy-red text-white px-4 py-2 rounded hover:bg-primary-navy hover:text-white hover:scale-105 transition-all duration-300 font-bold mt-4 shadow-lg"
             >
               Schedule Demo
             </button>
