@@ -5,19 +5,19 @@ export default function Footer() {
   return (
     <footer className="bg-primary-navy text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
           {/* Brand */}
-          <div className="text-center md:text-left">
-            <div className="mb-4 flex justify-center md:justify-start">
+          <div className="flex flex-col items-center md:items-start">
+            <div className="mb-4 md:ml-4">
               <img src="/images/logo_footer.svg" alt="Ring to Kitchen AI" className="w-auto" style={{ height: '8rem' }} />
             </div>
-            <p className="text-white/70 text-sm text-center md:text-left max-w-[200px] mx-auto md:mx-0">
+            <p className="text-white/70 text-sm text-center max-w-[200px]">
               From ring to kitchen<br />AI that speaks restaurant
             </p>
           </div>
 
           {/* Product */}
-          <div>
+          <div className="md:pt-6 text-center md:text-left">
             <h4 className="font-bold mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/pricing" className="text-white/70 hover:text-energy-red transition">Pricing</Link></li>
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
           {/* Company */}
-          <div>
+          <div className="md:pt-6 text-center md:text-left">
             <h4 className="font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
               <li><a href={`mailto:${COMPANY_INFO.email}`} className="text-white/70 hover:text-energy-red transition">Contact</a></li>
@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="md:pt-6 text-center md:text-left">
             <h4 className="font-bold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-sm text-white/70">
               <li>
@@ -55,7 +55,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/20 pt-8 text-center text-sm text-white/60">
+      </div>
+      <div className="border-t border-white/20 mx-4 sm:mx-6 lg:mx-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 text-center text-sm text-white/60">
           <p>&copy; {new Date().getFullYear()} Ring to Kitchen AI. All rights reserved.</p>
         </div>
       </div>
