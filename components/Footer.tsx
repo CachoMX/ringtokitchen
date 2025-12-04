@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="mb-4 flex justify-center md:justify-start">
               <img src="/images/logo_footer.svg" alt="Ring to Kitchen AI" className="w-auto" style={{ height: '8rem' }} />
             </div>
-            <p className="text-white/70 text-sm text-center max-w-[200px] mx-auto">
+            <p className="text-white/70 text-sm text-center md:text-left max-w-[200px] mx-auto md:mx-0">
               From ring to kitchen<br />AI that speaks restaurant
             </p>
           </div>
