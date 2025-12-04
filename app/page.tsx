@@ -454,7 +454,7 @@ export default function HomePage() {
                 switch (title) {
                   case 'Fast Casual':
                     return (
-                      <img src="/hamburguesa.png" alt="Fast Casual" className="w-16 h-16 mx-auto object-contain" />
+                      <img src="/Hamburguesa.png" alt="Fast Casual" className="w-16 h-16 mx-auto object-contain" />
                     );
                   case 'Fine Dining':
                     return (
@@ -466,11 +466,11 @@ export default function HomePage() {
                     );
                   case 'Multi-Location Chains':
                     return (
-                      <img src="/logistica.png" alt="Multi-Location Chains" className="w-16 h-16 mx-auto object-contain" />
+                      <img src="/Logistica.png" alt="Multi-Location Chains" className="w-16 h-16 mx-auto object-contain" />
                     );
                   case 'Cafés & Bakeries':
                     return (
-                      <img src="/cafeteria.png" alt="Cafés & Bakeries" className="w-16 h-16 mx-auto object-contain" />
+                      <img src="/Cafeteria.png" alt="Cafés & Bakeries" className="w-16 h-16 mx-auto object-contain" />
                     );
                   default:
                     return <div className="text-4xl mb-3">{useCase.icon}</div>;
