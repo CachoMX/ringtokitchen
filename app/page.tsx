@@ -14,7 +14,7 @@ export default function HomePage() {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const latestPosts = getAllBlogPosts().slice(0, 3);
 
-  const stepIcons = ['10.png', 'Rk.png', '4.png', 'Resultados .png'];
+  const stepIcons = ['10.png', 'RK.png', '4.png', 'Resultados .png'];
 
   const handleCardFlip = (index: number) => {
     if (!flippedCards.includes(index)) {
@@ -271,7 +271,6 @@ export default function HomePage() {
                               src={`/${stepIcons[idx]}`}
                               alt={step.title}
                               className="w-28 h-28 object-contain"
-                              style={stepIcons[idx] === 'Rk.png' ? { mixBlendMode: 'multiply' } : {}}
                             />
                           </div>
                         </div>
