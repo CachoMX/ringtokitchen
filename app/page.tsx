@@ -14,7 +14,7 @@ export default function HomePage() {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const latestPosts = getAllBlogPosts().slice(0, 3);
 
-  const stepIcons = ['10.png', '3.png', '4.png', '7.png'];
+  const stepIcons = ['10.png', 'Rk.png', '4.png', 'Resultados .png'];
 
   const handleCardFlip = (index: number) => {
     if (!flippedCards.includes(index)) {
@@ -49,19 +49,25 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl text-left">
+          <div className="max-w-3xl mx-auto text-center">
           {/* Trust Badges */}
-          <div className="flex justify-start gap-4 mb-8 flex-wrap">
+          <div className="flex justify-center gap-4 mb-8 flex-wrap">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="text-2xl">✓</span>
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
               <span className="text-white text-sm">100+ Restaurants</span>
             </div>
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="text-2xl">⚡</span>
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
               <span className="text-white text-sm">99.9% Uptime</span>
             </div>
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="text-2xl">🚀</span>
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
               <span className="text-white text-sm">24/7 Support</span>
             </div>
           </div>
@@ -79,7 +85,7 @@ export default function HomePage() {
           </p>
 
           {/* Key Features Pills */}
-          <div className="flex flex-wrap justify-start gap-3 mb-10">
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
             <div className="bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/30 text-white text-sm font-medium">
               99% Order Accuracy Voice AI
             </div>
@@ -92,7 +98,7 @@ export default function HomePage() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => setIsDemoModalOpen(true)}
               className="bg-energy-red hover:bg-primary-navy hover:text-white text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg"
@@ -109,7 +115,10 @@ export default function HomePage() {
 
           {/* Social Proof */}
           <div className="mt-16 text-white/60 text-sm">
-            ⭐ <span className="text-white font-bold">4.9/5 average rating</span> from restaurant owners
+            <svg className="w-5 h-5 text-white inline-block mr-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <span className="text-white font-bold">4.9/5 average rating</span> from restaurant owners
           </div>
           </div>
         </div>
@@ -158,25 +167,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Title in solid orange banner - full width */}
+      <section className="bg-energy-red pt-16 pb-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
+            Why Restaurants Choose <br /><span className="text-primary-navy">Ring to Kitchen AI</span>
+          </h2>
+          <p className="text-xl text-white/90">
+            Restaurant-trained AI that understands your business
+          </p>
+        </div>
+      </section>
+
       {/* Value Proposition Section */}
-      <section className="py-20 bg-gradient-to-br from-energy-red via-[#F17A5C] to-[#FF9470]">
+      <section className="pt-0 pb-16 bg-gradient-to-b from-energy-red to-[#FF9470]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
-              Why Restaurants Choose <br />Ring to Kitchen AI
-            </h2>
-            <p className="text-xl text-white/90">
-              Restaurant-trained AI that understands your business
-            </p>
-          </div>
 
           <div className="space-y-8">
             <div className="flex items-center gap-6">
-              <svg className="w-12 h-12 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-              </svg>
+              <img src="/RK.png" alt="Restaurant-Trained AI" className="w-20 h-20 flex-shrink-0 object-contain" />
               <div className="border-l-4 border-white pl-6 py-2 flex-1">
-                <h3 className="font-inter text-2xl text-white mb-2 font-bold">Restaurant-Trained AI</h3>
+                <h3 className="font-inter text-2xl text-primary-navy mb-2 font-bold">Restaurant-Trained AI</h3>
                 <p className="text-white/90 text-lg leading-relaxed">
                   Understands "extra cheese," "gluten-free crust," and complex restaurant conversations. 99% accuracy on food orders.
                 </p>
@@ -184,11 +195,9 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center gap-6">
-              <svg className="w-12 h-12 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-              </svg>
+              <img src="/Ventas.png" alt="Works Your Way" className="w-20 h-20 flex-shrink-0 object-contain" />
               <div className="border-l-4 border-white pl-6 py-2 flex-1">
-                <h3 className="font-inter text-2xl text-white mb-2 font-bold">Works Your Way</h3>
+                <h3 className="font-inter text-2xl text-primary-navy mb-2 font-bold">Works Your Way</h3>
                 <p className="text-white/90 text-lg leading-relaxed">
                   Complete standalone solution or seamless integration with your existing POS. You choose what works for your restaurant.
                 </p>
@@ -196,11 +205,9 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center gap-6">
-              <svg className="w-12 h-12 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-              </svg>
+              <img src="/expancion.png" alt="Proven Results" className="w-20 h-20 flex-shrink-0 object-contain" />
               <div className="border-l-4 border-white pl-6 py-2 flex-1">
-                <h3 className="font-inter text-2xl text-white mb-2 font-bold">Proven Results</h3>
+                <h3 className="font-inter text-2xl text-primary-navy mb-2 font-bold">Proven Results</h3>
                 <p className="text-white/90 text-lg leading-relaxed">
                   30% average increase in phone orders, 99.9% uptime, and enterprise-grade reliability. Real restaurants, real results.
                 </p>
@@ -259,11 +266,12 @@ export default function HomePage() {
                         {/* Icon with animated gradient background */}
                         <div className="relative mb-6">
                           <div className="absolute inset-0 bg-gradient-to-br from-energy-red/10 to-primary-navy/10 rounded-full blur-xl transition-all duration-500"></div>
-                          <div className="relative rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-lg">
+                          <div className="relative rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-lg overflow-hidden">
                             <img
                               src={`/${stepIcons[idx]}`}
                               alt={step.title}
                               className="w-28 h-28 object-contain"
+                              style={stepIcons[idx] === 'Rk.png' ? { mixBlendMode: 'multiply' } : {}}
                             />
                           </div>
                         </div>
@@ -436,7 +444,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="text-center mb-16">
             <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4 drop-shadow-lg">
-              Perfect For Every Restaurant Type
+              Perfect For Every <span className="text-energy-red">Restaurant Type</span>
             </h2>
             <p className="text-white/90 text-lg">From food trucks to fine dining, we've got you covered</p>
           </div>
@@ -447,35 +455,23 @@ export default function HomePage() {
                 switch (title) {
                   case 'Fast Casual':
                     return (
-                      <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                      </svg>
+                      <img src="/hamburguesa.png" alt="Fast Casual" className="w-16 h-16 mx-auto object-contain" />
                     );
                   case 'Fine Dining':
                     return (
-                      <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                        <circle cx="12" cy="12" r="8" strokeWidth={2} />
-                      </svg>
+                      <img src="/Restauran.png" alt="Fine Dining" className="w-16 h-16 mx-auto object-contain" />
                     );
                   case 'Food Trucks':
                     return (
-                      <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
-                      </svg>
+                      <img src="/foodtruck.png" alt="Food Trucks" className="w-16 h-16 mx-auto object-contain" />
                     );
                   case 'Multi-Location Chains':
                     return (
-                      <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
+                      <img src="/logistica.png" alt="Multi-Location Chains" className="w-16 h-16 mx-auto object-contain" />
                     );
                   case 'Cafés & Bakeries':
                     return (
-                      <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 6l3.5 3.5M6 18l3.5-3.5" />
-                      </svg>
+                      <img src="/cafeteria.png" alt="Cafés & Bakeries" className="w-16 h-16 mx-auto object-contain" />
                     );
                   default:
                     return <div className="text-4xl mb-3">{useCase.icon}</div>;
@@ -483,14 +479,14 @@ export default function HomePage() {
               };
 
               return (
-                <div key={idx} className="relative">
+                <div key={idx} className="relative h-full">
                   {/* Connecting line for desktop */}
                   {idx < USE_CASES.length - 1 && (
                     <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-energy-red/50 to-transparent z-0"></div>
                   )}
 
-                  <div className="bg-white/95 backdrop-blur rounded-xl p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/50">
-                    <div className="text-energy-red mb-3">{getIcon(useCase.title)}</div>
+                  <div className="bg-white/95 backdrop-blur rounded-xl p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/50 h-full flex flex-col justify-between min-h-[200px]">
+                    <div className="mb-3">{getIcon(useCase.title)}</div>
                     <h3 className="font-bold text-primary-navy mb-2">{useCase.title}</h3>
                     <p className="text-sm text-gray-600">{useCase.description}</p>
                   </div>
@@ -502,36 +498,69 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white relative overflow-hidden" style={{ backgroundImage: 'url(/14.png)', backgroundSize: 'cover', backgroundPosition: 'center top' }}>
-        {/* Overlay blanco sólido */}
-        <div className="absolute inset-0 bg-white z-0"></div>
-
+      <section className="py-20 bg-gradient-to-b from-white to-soft-gray relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
+            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Testimonials</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
               Loved by Restaurant Owners
             </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              See what restaurant owners are saying about Ring to Kitchen AI
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {TESTIMONIALS.slice(0, 3).map((testimonial, idx) => (
-              <div key={idx} className="bg-soft-gray rounded-2xl p-8 hover:shadow-xl transition">
-                <div className="flex gap-1 mb-4">
+              <div key={idx} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 relative border border-gray-100">
+                {/* Quote icon */}
+                <div className="absolute -top-4 left-8">
+                  <div className="bg-energy-red w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Stars */}
+                <div className="flex gap-1 mb-6 mt-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-energy-red">⭐</span>
+                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
                   ))}
                 </div>
 
-                <p className="text-gray-700 mb-6 italic leading-relaxed">
+                {/* Quote */}
+                <p className="text-gray-700 mb-8 leading-relaxed text-lg">
                   "{testimonial.quote}"
                 </p>
 
-                <div className="flex items-center gap-4 pt-6 border-t border-gray-300">
-                  <div className="text-4xl">{testimonial.image}</div>
+                {/* Author */}
+                <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
+                  {idx === 0 ? (
+                    <img
+                      src="/Maria.png"
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover shadow-md"
+                    />
+                  ) : idx === 1 ? (
+                    <img
+                      src="/James.png"
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover shadow-md"
+                    />
+                  ) : (
+                    <img
+                      src="/Sofia2.png"
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover shadow-md"
+                    />
+                  )}
                   <div>
-                    <p className="font-bold text-primary-navy">{testimonial.name}</p>
+                    <p className="font-bold text-primary-navy text-lg">{testimonial.name}</p>
                     <p className="text-sm text-gray-600">{testimonial.restaurant}</p>
-                    <p className="text-sm text-gray-500">{testimonial.location}</p>
+                    <p className="text-xs text-gray-400">{testimonial.location}</p>
                   </div>
                 </div>
               </div>
@@ -541,9 +570,7 @@ export default function HomePage() {
       </section>
 
       {/* Blog Preview */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#E5D4C1', backgroundImage: 'url(/14.png)', backgroundSize: 'cover', backgroundPosition: 'center bottom' }}>
-        {/* Overlay beige sólido */}
-        <div className="absolute inset-0 z-0" style={{ backgroundColor: '#E5D4C1' }}></div>
+      <section className="py-20 relative overflow-hidden bg-soft-gray">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
