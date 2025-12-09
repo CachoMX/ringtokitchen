@@ -615,7 +615,7 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/salema.png)', backgroundSize: '150%', backgroundPosition: 'right center' }}>
+      <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/food.png)', backgroundSize: '150%', backgroundPosition: 'right center' }}>
         {/* White Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-10"></div>
 
