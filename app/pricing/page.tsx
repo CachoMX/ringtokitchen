@@ -11,6 +11,22 @@ export default function PricingPage() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
 
+  // Needs Assessment State
+  const [selectedCalls, setSelectedCalls] = useState<number | null>(null);
+  const [selectedLocations, setSelectedLocations] = useState<number | null>(null);
+  const [selectedFeatures, setSelectedFeatures] = useState<number | null>(null);
+  const [selectedSupport, setSelectedSupport] = useState<number | null>(null);
+
+  // Calculate recommended tier based on selections
+  const getRecommendedTier = () => {
+    const total = (selectedCalls || 0) + (selectedLocations || 0) + (selectedFeatures || 0) + (selectedSupport || 0);
+    if (total <= 4) return 'Starter';
+    if (total <= 8) return 'Professional';
+    return 'Enterprise';
+  };
+
+  const allSelected = selectedCalls !== null && selectedLocations !== null && selectedFeatures !== null && selectedSupport !== null;
+
   const faqs = [
     {
       question: 'Can I cancel anytime?',
@@ -48,19 +64,35 @@ export default function PricingPage() {
 
       <div className="pt-24">
         {/* Hero */}
-        <section className="py-20 text-white relative overflow-hidden flex items-center" style={{ minHeight: '800px', backgroundImage: 'url(/calle2.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        {/* Overlay naranja quemado para mantener legibilidad del texto */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#C13515]/70 via-[#B8401F]/50 to-[#CC4A28]/30 z-0"></div>
+        <section className="relative min-h-[600px] flex items-center overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src="/Copia de 7.png"
+              alt="Restaurant Technology"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-navy/95 via-primary-navy/80 to-primary-navy/60"></div>
+          </div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
-          <h1 className="font-inter text-5xl sm:text-6xl mb-6 whitespace-nowrap" style={{ textShadow: '0 0 4px rgba(255,255,255,0.3), 0 0 8px rgba(255,255,255,0.2)' }}>
-            Simple, <span className="text-primary-navy">Transparent Pricing</span>
-          </h1>
-          <p className="text-xl text-white/80" style={{ textShadow: '0 0 3px rgba(255,255,255,0.25), 0 0 6px rgba(255,255,255,0.15)' }}>
-            No hidden fees. No long-term contracts. Cancel anytime.
-          </p>
-        </div>
-      </section>
+          {/* Animated decorative elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-20 left-10 w-64 h-64 bg-energy-red/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-energy-red/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+            <div className="max-w-3xl">
+              <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-4">Pricing</p>
+              <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+                Simple, <span className="text-energy-red">Transparent Pricing</span>
+              </h1>
+              <p className="text-xl text-white/80">
+                No hidden fees. No long-term contracts. Cancel anytime.
+              </p>
+            </div>
+          </div>
+        </section>
 
       {/* Pricing Tiers */}
       <section className="py-20 relative overflow-hidden">
@@ -155,6 +187,165 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Needs Assessment Table */}
+      <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Find Your Plan</p>
+            <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
+              Which Plan is <span className="text-energy-red">Right for You?</span>
+            </h2>
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              Select the option that best describes your restaurant in each row
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            {/* Table Header */}
+            <div className="grid grid-cols-5 bg-soft-gray border-b border-gray-200">
+              <div className="p-4 font-bold text-primary-navy text-center">Category</div>
+              <div className="p-4 font-bold text-primary-navy text-center border-l border-gray-200">Low</div>
+              <div className="p-4 font-bold text-primary-navy text-center border-l border-gray-200">Medium</div>
+              <div className="p-4 font-bold text-primary-navy text-center border-l border-gray-200">High</div>
+              <div className="p-4 font-bold text-primary-navy text-center border-l border-gray-200">Very High</div>
+            </div>
+
+            {/* Row 1: Daily Calls */}
+            <div className="grid grid-cols-5 border-b border-gray-200">
+              <div className="p-4 bg-soft-gray/50 flex items-center justify-center">
+                <span className="font-semibold text-primary-navy text-sm text-center">Daily Calls</span>
+              </div>
+              {[
+                { label: '10-30', value: 1 },
+                { label: '31-60', value: 2 },
+                { label: '61-100', value: 3 },
+                { label: '100+', value: 4 },
+              ].map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => setSelectedCalls(option.value)}
+                  className={`p-4 border-l border-gray-200 transition-all duration-200 hover:bg-energy-red/10 ${
+                    selectedCalls === option.value
+                      ? 'bg-energy-red text-white font-bold'
+                      : 'bg-white text-gray-700'
+                  }`}
+                >
+                  <span className="text-sm">{option.label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Row 2: Number of Locations */}
+            <div className="grid grid-cols-5 border-b border-gray-200">
+              <div className="p-4 bg-soft-gray/50 flex items-center justify-center">
+                <span className="font-semibold text-primary-navy text-sm text-center">Locations</span>
+              </div>
+              {[
+                { label: '1', value: 1 },
+                { label: '2-3', value: 2 },
+                { label: '4-6', value: 3 },
+                { label: '7+', value: 4 },
+              ].map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => setSelectedLocations(option.value)}
+                  className={`p-4 border-l border-gray-200 transition-all duration-200 hover:bg-energy-red/10 ${
+                    selectedLocations === option.value
+                      ? 'bg-energy-red text-white font-bold'
+                      : 'bg-white text-gray-700'
+                  }`}
+                >
+                  <span className="text-sm">{option.label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Row 3: Features Needed */}
+            <div className="grid grid-cols-5 border-b border-gray-200">
+              <div className="p-4 bg-soft-gray/50 flex items-center justify-center">
+                <span className="font-semibold text-primary-navy text-sm text-center">Features</span>
+              </div>
+              {[
+                { label: 'Basic Orders', value: 1 },
+                { label: '+ Reservations', value: 2 },
+                { label: '+ Custom Voice', value: 3 },
+                { label: 'Full Suite', value: 4 },
+              ].map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => setSelectedFeatures(option.value)}
+                  className={`p-4 border-l border-gray-200 transition-all duration-200 hover:bg-energy-red/10 ${
+                    selectedFeatures === option.value
+                      ? 'bg-energy-red text-white font-bold'
+                      : 'bg-white text-gray-700'
+                  }`}
+                >
+                  <span className="text-sm">{option.label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Row 4: Support Level */}
+            <div className="grid grid-cols-5">
+              <div className="p-4 bg-soft-gray/50 flex items-center justify-center">
+                <span className="font-semibold text-primary-navy text-sm text-center">Support</span>
+              </div>
+              {[
+                { label: 'Email', value: 1 },
+                { label: '24h Response', value: 2 },
+                { label: 'Priority', value: 3 },
+                { label: 'Dedicated', value: 4 },
+              ].map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => setSelectedSupport(option.value)}
+                  className={`p-4 border-l border-gray-200 transition-all duration-200 hover:bg-energy-red/10 ${
+                    selectedSupport === option.value
+                      ? 'bg-energy-red text-white font-bold'
+                      : 'bg-white text-gray-700'
+                  }`}
+                >
+                  <span className="text-sm">{option.label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Result Section */}
+            <div className="p-8 bg-gradient-to-r from-soft-gray to-white border-t-2 border-energy-red">
+              {allSelected ? (
+                <div className="text-center">
+                  <p className="text-gray-600 mb-2">Based on your selections, we recommend:</p>
+                  <div className="inline-block bg-gradient-to-r from-energy-red to-[#FF6B4A] text-white px-8 py-4 rounded-xl shadow-lg mb-6">
+                    <span className="text-3xl font-bold">{getRecommendedTier()}</span>
+                  </div>
+                  <p className="text-gray-500 text-sm mb-6">
+                    {getRecommendedTier() === 'Starter' && 'Perfect for single-location restaurants with moderate call volume.'}
+                    {getRecommendedTier() === 'Professional' && 'Ideal for growing restaurants with multiple locations or high call volume.'}
+                    {getRecommendedTier() === 'Enterprise' && 'Best for large operations requiring custom solutions and dedicated support.'}
+                  </p>
+                  <button
+                    onClick={() => setIsDemoModalOpen(true)}
+                    className="bg-energy-red text-white px-8 py-4 rounded-lg hover:bg-primary-navy transition-all duration-300 font-bold text-lg shadow-lg"
+                  >
+                    Get Started with {getRecommendedTier()}
+                  </button>
+                </div>
+              ) : (
+                <div className="text-center">
+                  <p className="text-gray-500 mb-4">Select an option in each row to see your recommended plan</p>
+                  <div className="flex justify-center gap-2">
+                    <span className={`w-3 h-3 rounded-full ${selectedCalls ? 'bg-energy-red' : 'bg-gray-300'}`}></span>
+                    <span className={`w-3 h-3 rounded-full ${selectedLocations ? 'bg-energy-red' : 'bg-gray-300'}`}></span>
+                    <span className={`w-3 h-3 rounded-full ${selectedFeatures ? 'bg-energy-red' : 'bg-gray-300'}`}></span>
+                    <span className={`w-3 h-3 rounded-full ${selectedSupport ? 'bg-energy-red' : 'bg-gray-300'}`}></span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Feature Comparison */}
       <section className="py-20 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -228,19 +419,10 @@ export default function PricingPage() {
 
       {/* Final CTA */}
       <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px' }}>
-        {/* Video Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute w-full h-full object-cover"
-            style={{ objectFit: 'cover' }}
-          >
+          <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover" style={{ objectFit: 'cover' }}>
             <source src="/Chica.mp4" type="video/mp4" />
           </video>
-          {/* White Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-10"></div>
         </div>
 

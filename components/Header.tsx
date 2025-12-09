@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface HeaderProps {
   onDemoClick: () => void;
@@ -10,6 +10,8 @@ interface HeaderProps {
 export default function Header({ onDemoClick }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const resourcesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,17 @@ export default function Header({ onDemoClick }: HeaderProps) {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
+        setResourcesOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   return (
@@ -34,15 +47,51 @@ export default function Header({ onDemoClick }: HeaderProps) {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           <Link href="/" className="text-primary-navy hover:text-energy-red transition font-medium">
             Home
+          </Link>
+          <Link href="/how-it-works" className="text-primary-navy hover:text-energy-red transition font-medium">
+            How It Works
           </Link>
           <Link href="/pricing" className="text-primary-navy hover:text-energy-red transition font-medium">
             Pricing
           </Link>
-          <Link href="/blog" className="text-primary-navy hover:text-energy-red transition font-medium">
-            Blog
+
+          {/* Resources Dropdown */}
+          <div className="relative" ref={resourcesRef}>
+            <button
+              onClick={() => setResourcesOpen(!resourcesOpen)}
+              className="flex items-center gap-1 text-primary-navy hover:text-energy-red transition font-medium"
+            >
+              Resources
+              <svg className={`w-4 h-4 transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {resourcesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50">
+                <Link
+                  href="/blog"
+                  className="block px-4 py-2 text-primary-navy hover:bg-soft-gray hover:text-energy-red transition"
+                  onClick={() => setResourcesOpen(false)}
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/testimonials"
+                  className="block px-4 py-2 text-primary-navy hover:bg-soft-gray hover:text-energy-red transition"
+                  onClick={() => setResourcesOpen(false)}
+                >
+                  Testimonials
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link href="/contact" className="text-primary-navy hover:text-energy-red transition font-medium">
+            Contact
           </Link>
         </div>
 
@@ -81,9 +130,15 @@ export default function Header({ onDemoClick }: HeaderProps) {
       {isOpen && (
         <div className="md:hidden border-t border-soft-gray bg-white">
           <div className="px-4 py-3 space-y-2">
-            <Link href="/" className="block py-2 text-primary-navy hover:text-energy-red font-medium">Home</Link>
-            <Link href="/pricing" className="block py-2 text-primary-navy hover:text-energy-red font-medium">Pricing</Link>
-            <Link href="/blog" className="block py-2 text-primary-navy hover:text-energy-red font-medium">Blog</Link>
+            <Link href="/" className="block py-2 text-primary-navy hover:text-energy-red font-medium" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link href="/how-it-works" className="block py-2 text-primary-navy hover:text-energy-red font-medium" onClick={() => setIsOpen(false)}>How It Works</Link>
+            <Link href="/pricing" className="block py-2 text-primary-navy hover:text-energy-red font-medium" onClick={() => setIsOpen(false)}>Pricing</Link>
+            <div className="border-t border-gray-200 pt-2 mt-2">
+              <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Resources</p>
+              <Link href="/blog" className="block py-2 pl-4 text-primary-navy hover:text-energy-red font-medium" onClick={() => setIsOpen(false)}>Blog</Link>
+              <Link href="/testimonials" className="block py-2 pl-4 text-primary-navy hover:text-energy-red font-medium" onClick={() => setIsOpen(false)}>Testimonials</Link>
+            </div>
+            <Link href="/contact" className="block py-2 text-primary-navy hover:text-energy-red font-medium" onClick={() => setIsOpen(false)}>Contact</Link>
             <a
               href="tel:+14482299561"
               className="flex items-center gap-2 py-2 text-primary-navy hover:text-energy-red font-bold"
