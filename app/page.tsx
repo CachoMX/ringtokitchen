@@ -752,8 +752,9 @@ export default function HomePage() {
       </section>
 
       {/* Blog Preview - Featured Only */}
-      <section className="py-20 bg-primary-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative" style={{ backgroundImage: 'url(/red.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-primary-navy/80"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Blog</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
