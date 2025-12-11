@@ -16,7 +16,8 @@ const config: Config = {
       },
       fontFamily: {
         inter: ['Poppins', 'sans-serif'],
-        ttnorms: ['var(--font-tt-norms)', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        sans: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
     },
   },
