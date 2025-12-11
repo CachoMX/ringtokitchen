@@ -3,7 +3,12 @@ import { COMPANY_INFO, SOCIAL_LINKS } from '@/lib/constants';
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-navy text-white py-12">
+    <>
+      {/* Separator */}
+      <div className="h-4 bg-white"></div>
+      <div className="h-1 bg-energy-red/30"></div>
+
+      <footer className="bg-primary-navy text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
           {/* Brand */}
@@ -62,5 +67,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

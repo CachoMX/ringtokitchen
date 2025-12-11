@@ -83,8 +83,8 @@ export default function PricingPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
             <div className="max-w-3xl">
-              <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-4">Pricing</p>
-              <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Pricing</p>
+              <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight whitespace-nowrap">
                 Simple, <span className="text-energy-red">Transparent Pricing</span>
               </h1>
               <p className="text-xl text-white/80">
@@ -95,19 +95,7 @@ export default function PricingPage() {
         </section>
 
       {/* Pricing Tiers */}
-      <section className="py-20 relative overflow-hidden">
-        {/* Background Image with Blur */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url(/onda.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'blur(2px)',
-            opacity: 0.3
-          }}
-        ></div>
-
+      <section className="py-20 relative overflow-hidden bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-6">
             {PRICING_TIERS.map((tier, idx) => (
@@ -188,8 +176,9 @@ export default function PricingPage() {
       </section>
 
       {/* Needs Assessment Table */}
-      <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative" style={{ backgroundImage: 'url(/onda.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-navy/90 to-[#0d1f3c]/95"></div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Find Your Plan</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
@@ -418,27 +407,28 @@ export default function PricingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px' }}>
-        <div className="absolute inset-0 overflow-hidden">
-          <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover" style={{ objectFit: 'cover' }}>
-            <source src="/Chica.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-10"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
-          <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-primary-navy">
-            Still Not Sure? Let's Talk.
+      <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+          <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-white">
+            Still Not Sure? <span className="text-energy-red">Let's Talk.</span>
           </h2>
-          <p className="text-xl mb-8 text-gray-700">
+          <p className="text-xl mb-8 text-white/90">
             Schedule a personalized demo and see Ring to Kitchen AI in action
           </p>
-          <button
-            onClick={() => setIsDemoModalOpen(true)}
-            className="bg-energy-red text-white px-8 py-4 rounded-lg hover:bg-primary-navy hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
-          >
-            Schedule Demo
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => setIsDemoModalOpen(true)}
+              className="bg-white text-energy-red px-8 py-4 rounded-lg hover:bg-energy-red hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
+            >
+              Schedule Demo
+            </button>
+            <a
+              href="/contact"
+              className="border-2 border-white text-white hover:bg-white hover:text-primary-navy hover:scale-105 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center shadow-lg"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
       </section>
       </div>

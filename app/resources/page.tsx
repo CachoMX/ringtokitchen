@@ -39,7 +39,7 @@ export default function ResourcesPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
             <div className="max-w-3xl">
-              <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-4">Resources</p>
+              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Resources</p>
               <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
                 AI Hub & <span className="text-energy-red">Knowledge Center</span>
               </h1>
@@ -224,24 +224,24 @@ export default function ResourcesPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-r from-primary-navy to-[#1a3a5c]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-inter text-4xl text-white mb-6">
-              Ready to Get Started?
+        <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+            <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-white">
+              Ready to <span className="text-energy-red">Get Started?</span>
             </h2>
-            <p className="text-xl text-white/80 mb-8">
+            <p className="text-xl mb-8 text-white/90">
               Schedule a demo and see Ring to Kitchen AI in action
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setIsDemoModalOpen(true)}
-                className="bg-energy-red text-white px-8 py-4 rounded-lg hover:bg-white hover:text-energy-red transition-all duration-300 font-bold text-lg shadow-lg"
+                className="bg-white text-energy-red px-8 py-4 rounded-lg hover:bg-energy-red hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
               >
                 Schedule Demo
               </button>
               <Link
                 href="/pricing"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-navy transition-all duration-300 font-bold text-lg"
+                className="border-2 border-white text-white hover:bg-white hover:text-primary-navy hover:scale-105 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center shadow-lg"
               >
                 View Pricing
               </Link>

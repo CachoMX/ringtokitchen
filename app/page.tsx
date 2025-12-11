@@ -12,6 +12,7 @@ import Link from 'next/link';
 export default function HomePage() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
+  const [selectedQuizOption, setSelectedQuizOption] = useState<string | null>(null);
   const latestPosts = getAllBlogPosts().slice(0, 3);
 
   // Savings Calculator State
@@ -139,7 +140,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
-              How It Works
+              How It <span className="text-energy-red">Works</span>
             </h2>
             <p className="text-lg text-gray-600">
               From ring to kitchen in four simple steps
@@ -176,8 +177,7 @@ export default function HomePage() {
                     <div className="flip-card-back absolute w-full h-full">
                       <div className="w-full h-full bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
                         <div className="relative mb-6">
-                          <div className="absolute inset-0 bg-gradient-to-br from-energy-red/10 to-primary-navy/10 rounded-full blur-xl transition-all duration-500"></div>
-                          <div className="relative rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-lg overflow-hidden">
+                          <div className="relative rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-lg overflow-hidden bg-white">
                             <img
                               src={`/${stepIcons[idx]}`}
                               alt={step.title}
@@ -423,8 +423,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {/* Fast Casual */}
             <div className="bg-white rounded-2xl p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <img src="/Hamburguesa.png" alt="Fast Casual" className="w-14 h-14 object-contain" />
+              <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                <img src="/Hamburguesa.png" alt="Fast Casual" className="w-20 h-20 object-contain" />
               </div>
               <h3 className="font-bold text-primary-navy text-lg mb-2">Fast Casual</h3>
               <p className="text-sm text-gray-600">High-volume order processing during peak hours</p>
@@ -432,8 +432,8 @@ export default function HomePage() {
 
             {/* Fine Dining */}
             <div className="bg-white rounded-2xl p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <img src="/Restauran.png" alt="Fine Dining" className="w-14 h-14 object-contain" />
+              <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                <img src="/Restauran.png" alt="Fine Dining" className="w-20 h-20 object-contain" />
               </div>
               <h3 className="font-bold text-primary-navy text-lg mb-2">Fine Dining</h3>
               <p className="text-sm text-gray-600">Elegant reservation management and special requests</p>
@@ -441,8 +441,8 @@ export default function HomePage() {
 
             {/* Food Trucks */}
             <div className="bg-white rounded-2xl p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <img src="/foodtruck.png" alt="Food Trucks" className="w-14 h-14 object-contain" />
+              <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                <img src="/foodtruck.png" alt="Food Trucks" className="w-20 h-20 object-contain" />
               </div>
               <h3 className="font-bold text-primary-navy text-lg mb-2">Food Trucks</h3>
               <p className="text-sm text-gray-600">Mobile ordering and location updates</p>
@@ -450,8 +450,8 @@ export default function HomePage() {
 
             {/* Multi-Location Chains */}
             <div className="bg-white rounded-2xl p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <img src="/Logistica.png" alt="Multi-Location Chains" className="w-14 h-14 object-contain" />
+              <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                <img src="/Cadena.png" alt="Multi-Location Chains" className="w-20 h-20 object-contain" />
               </div>
               <h3 className="font-bold text-primary-navy text-lg mb-2">Multi-Location Chains</h3>
               <p className="text-sm text-gray-600">Centralized AI management across all locations</p>
@@ -459,8 +459,8 @@ export default function HomePage() {
 
             {/* Cafés & Bakeries */}
             <div className="bg-white rounded-2xl p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <img src="/Cafeteria.png" alt="Cafés & Bakeries" className="w-14 h-14 object-contain" />
+              <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                <img src="/Cafeteria.png" alt="Cafés & Bakeries" className="w-20 h-20 object-contain" />
               </div>
               <h3 className="font-bold text-primary-navy text-lg mb-2">Cafés & Bakeries</h3>
               <p className="text-sm text-gray-600">Morning rush order handling and pickup coordination</p>
@@ -488,17 +488,29 @@ export default function HomePage() {
                 <p className="text-sm text-energy-red font-medium mb-4">Question 1 of 5</p>
                 <h3 className="font-inter text-xl text-primary-navy mb-6">How many phone calls does your restaurant receive daily?</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <button className="text-left p-4 border-2 border-gray-200 rounded-xl hover:border-energy-red hover:bg-energy-red/5 transition-all">
-                    <span className="text-gray-700">Less than 20 calls</span>
+                  <button
+                    onClick={() => setSelectedQuizOption('less-20')}
+                    className={`text-left p-4 border-2 rounded-xl transition-all ${selectedQuizOption === 'less-20' ? 'border-energy-red bg-energy-red/10' : 'border-gray-200 hover:border-energy-red hover:bg-energy-red/5'}`}
+                  >
+                    <span className={selectedQuizOption === 'less-20' ? 'text-energy-red font-medium' : 'text-gray-700'}>Less than 20 calls</span>
                   </button>
-                  <button className="text-left p-4 border-2 border-gray-200 rounded-xl hover:border-energy-red hover:bg-energy-red/5 transition-all">
-                    <span className="text-gray-700">20-50 calls</span>
+                  <button
+                    onClick={() => setSelectedQuizOption('20-50')}
+                    className={`text-left p-4 border-2 rounded-xl transition-all ${selectedQuizOption === '20-50' ? 'border-energy-red bg-energy-red/10' : 'border-gray-200 hover:border-energy-red hover:bg-energy-red/5'}`}
+                  >
+                    <span className={selectedQuizOption === '20-50' ? 'text-energy-red font-medium' : 'text-gray-700'}>20-50 calls</span>
                   </button>
-                  <button className="text-left p-4 border-2 border-gray-200 rounded-xl hover:border-energy-red hover:bg-energy-red/5 transition-all">
-                    <span className="text-gray-700">50-100 calls</span>
+                  <button
+                    onClick={() => setSelectedQuizOption('50-100')}
+                    className={`text-left p-4 border-2 rounded-xl transition-all ${selectedQuizOption === '50-100' ? 'border-energy-red bg-energy-red/10' : 'border-gray-200 hover:border-energy-red hover:bg-energy-red/5'}`}
+                  >
+                    <span className={selectedQuizOption === '50-100' ? 'text-energy-red font-medium' : 'text-gray-700'}>50-100 calls</span>
                   </button>
-                  <button className="text-left p-4 border-2 border-gray-200 rounded-xl hover:border-energy-red hover:bg-energy-red/5 transition-all">
-                    <span className="text-gray-700">More than 100 calls</span>
+                  <button
+                    onClick={() => setSelectedQuizOption('more-100')}
+                    className={`text-left p-4 border-2 rounded-xl transition-all ${selectedQuizOption === 'more-100' ? 'border-energy-red bg-energy-red/10' : 'border-gray-200 hover:border-energy-red hover:bg-energy-red/5'}`}
+                  >
+                    <span className={selectedQuizOption === 'more-100' ? 'text-energy-red font-medium' : 'text-gray-700'}>More than 100 calls</span>
                   </button>
                 </div>
               </div>
@@ -527,10 +539,11 @@ export default function HomePage() {
       </section>
 
       {/* Savings Calculator - Compact Version */}
-      <section className="py-20 bg-gradient-to-br from-primary-navy to-[#0d1f3c]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative" style={{ backgroundImage: 'url(/onda.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-navy/90 to-[#0d1f3c]/95"></div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Calculate Your Savings</p>
+            <p className="text-white font-semibold text-sm uppercase tracking-wider mb-3">Calculate Your Savings</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
               How Much Are <span className="text-energy-red">Missed Calls</span> Costing You?
             </h2>
@@ -616,12 +629,12 @@ export default function HomePage() {
       <section className="py-20 bg-gradient-to-b from-white to-soft-gray relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Testimonials</p>
+            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">What They Say</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
-              Loved by Restaurant Owners
+              Loved by <span className="text-energy-red">Restaurant</span> Owners
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              See what restaurant owners are saying about Ring to Kitchen AI
+              Real feedback from real restaurant owners using Ring to Kitchen AI
             </p>
           </div>
 
@@ -673,13 +686,14 @@ export default function HomePage() {
       </section>
 
       {/* Pricing Preview */}
-      <section id="pricing" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="pricing" className="py-20 relative" style={{ backgroundImage: 'url(/onda.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 to-black/80"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
-              Simple, Transparent Pricing
+            <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
+              <span className="text-energy-red">Simple,</span> Transparent Pricing
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-white/80">
               No hidden fees. Cancel anytime.
             </p>
           </div>
@@ -752,15 +766,14 @@ export default function HomePage() {
       </section>
 
       {/* Blog Preview - Featured Only */}
-      <section className="py-20 relative" style={{ backgroundImage: 'url(/red.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-primary-navy/80"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-20 bg-soft-gray">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Blog</p>
-            <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
+            <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
               Latest <span className="text-energy-red">Insights</span>
             </h2>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Stay ahead of the restaurant industry
             </p>
           </div>
@@ -803,26 +816,24 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/food.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-10"></div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 w-full">
-          <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-primary-navy">
-            Ready to Transform Your Restaurant?
+      <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+          <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-white">
+            Ready to <span className="text-energy-red">Transform</span> Your Restaurant?
           </h2>
-          <p className="text-xl mb-8 text-gray-700">
+          <p className="text-xl mb-8 text-white/90">
             Join 100+ restaurants already using Ring to Kitchen AI
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => setIsDemoModalOpen(true)}
-              className="bg-energy-red text-white px-8 py-4 rounded-lg hover:bg-primary-navy hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
+              className="bg-white text-energy-red px-8 py-4 rounded-lg hover:bg-energy-red hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
             >
               Schedule Demo
             </button>
             <Link
               href="/pricing"
-              className="border-2 border-primary-navy text-primary-navy hover:bg-primary-navy hover:text-white hover:scale-105 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center shadow-lg"
+              className="border-2 border-white text-white hover:bg-white hover:text-primary-navy hover:scale-105 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center shadow-lg"
             >
               View Pricing
             </Link>

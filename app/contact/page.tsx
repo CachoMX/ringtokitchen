@@ -54,9 +54,9 @@ export default function ContactPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
             <div className="max-w-3xl">
-              <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-4">Contact Us</p>
-              <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
-                Get in <span className="text-energy-red">Touch</span>
+              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contact Us</p>
+              <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-energy-red mb-6 leading-tight">
+                Get in <span className="text-white">Touch</span>
               </h1>
               <p className="text-xl text-white/80">
                 We're here to help you transform your restaurant with AI
@@ -69,7 +69,7 @@ export default function ContactPage() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              <a href="mailto:contact@ringtokitchen.ai" className="bg-soft-gray rounded-2xl p-8 text-center hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer">
+              <a href="mailto:contact@ringtokitchen.ai" className="bg-soft-gray rounded-2xl p-8 text-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.3)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
                 <div className="w-16 h-16 bg-energy-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-energy-red/20 transition-colors">
                   <svg className="w-8 h-8 text-energy-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -82,7 +82,7 @@ export default function ContactPage() {
                 </span>
               </a>
 
-              <a href="tel:+14482299561" className="bg-soft-gray rounded-2xl p-8 text-center hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer">
+              <a href="tel:+14482299561" className="bg-soft-gray rounded-2xl p-8 text-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.3)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
                 <div className="w-16 h-16 bg-energy-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-energy-red/20 transition-colors">
                   <svg className="w-8 h-8 text-energy-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -97,7 +97,7 @@ export default function ContactPage() {
 
               <div
                 onClick={() => setIsDemoModalOpen(true)}
-                className="bg-gradient-to-br from-energy-red to-[#FF6B4A] rounded-2xl p-8 text-center hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer"
+                className="bg-gradient-to-br from-energy-red to-[#FF6B4A] rounded-2xl p-8 text-center shadow-[0_15px_50px_-5px_rgba(240,72,51,0.6)] hover:shadow-[0_25px_60px_-5px_rgba(240,72,51,0.7)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
               >
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/30 transition-colors">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   <p className="text-green-600">We'll get back to you within 24 hours.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="bg-soft-gray rounded-2xl p-8 shadow-lg">
+                <form onSubmit={handleSubmit} className="bg-soft-gray rounded-2xl p-8 shadow-[0_15px_50px_-5px_rgba(0,0,0,0.15)]">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-primary-navy mb-2">
@@ -280,31 +280,24 @@ export default function ContactPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '500px' }}>
-          <div className="absolute inset-0 overflow-hidden">
-            <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover" style={{ objectFit: 'cover' }}>
-              <source src="/Chica.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent z-10"></div>
-          </div>
-
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
-            <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-primary-navy">
-              Ready to Get Started?
+        <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/naranja%20y%20azul.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+            <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-white">
+              Ready to <span className="text-energy-red">Get Started?</span>
             </h2>
-            <p className="text-xl mb-8 text-gray-700">
+            <p className="text-xl mb-8 text-white/90">
               Schedule a demo and see Ring to Kitchen AI in action
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setIsDemoModalOpen(true)}
-                className="bg-energy-red text-white px-8 py-4 rounded-lg hover:bg-primary-navy hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
+                className="bg-white text-energy-red px-8 py-4 rounded-lg hover:bg-energy-red hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
               >
                 Schedule Demo
               </button>
               <Link
                 href="/pricing"
-                className="border-2 border-primary-navy text-primary-navy px-8 py-4 rounded-lg hover:bg-primary-navy hover:text-white transition-all duration-300 font-bold text-lg"
+                className="border-2 border-white text-white hover:bg-white hover:text-primary-navy hover:scale-105 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center shadow-lg"
               >
                 View Pricing
               </Link>

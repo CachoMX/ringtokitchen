@@ -84,10 +84,10 @@ export default function HowItWorksPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
             <div className="max-w-3xl">
-              <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-4">Our Process</p>
-              <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Our Process</p>
+              <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-energy-red mb-6 leading-tight">
                 From Ring to Kitchen in{' '}
-                <span className="text-energy-red">Four Simple Steps</span>
+                <span className="text-white">Four Simple Steps</span>
               </h1>
               <p className="text-xl text-white/80 max-w-2xl">
                 See exactly how our AI transforms every phone call into a seamless customer experience
@@ -132,7 +132,7 @@ export default function HowItWorksPage() {
                   </div>
 
                   <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                    <div className="bg-gradient-to-br from-soft-gray to-white rounded-2xl p-8 shadow-xl border border-gray-100">
+                    <div className="bg-[#F5F0E8] rounded-2xl p-8 shadow-xl border border-[#E8E0D4]">
                       <div className="relative rounded-full w-48 h-48 mx-auto flex items-center justify-center shadow-lg overflow-hidden bg-white">
                         <img
                           src={`/${stepIcons[idx]}`}
@@ -149,7 +149,7 @@ export default function HowItWorksPage() {
         </section>
 
         {/* Visual Process Flow */}
-        <section className="py-20 bg-soft-gray">
+        <section className="pt-6 pb-20" style={{ backgroundImage: 'url(/x.png)', backgroundSize: '100% 100%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="font-inter text-4xl text-primary-navy mb-4">
@@ -171,7 +171,14 @@ export default function HowItWorksPage() {
                     <p className="text-sm text-gray-600">{step.description}</p>
                   </div>
                   {idx < HOW_IT_WORKS_STEPS.length - 1 && (
-                    <div className="hidden lg:block w-12 h-1 bg-gradient-to-r from-energy-red to-primary-navy mx-2"></div>
+                    <div className="hidden lg:flex items-center mx-2">
+                      <svg className="w-12 h-8 text-primary-navy" viewBox="0 0 48 24" fill="none">
+                        <path d="M0 12h40M32 4l10 8-10 8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="50" strokeDashoffset="50">
+                          <animate attributeName="stroke-dashoffset" values="50;0;0" dur="3s" begin={`${idx * 1}s`} repeatCount="indefinite" />
+                          <animate attributeName="opacity" values="0.3;1;1;0.3" dur="3s" begin={`${idx * 1}s`} repeatCount="indefinite" />
+                        </path>
+                      </svg>
+                    </div>
                   )}
                 </div>
               ))}
@@ -181,42 +188,42 @@ export default function HowItWorksPage() {
 
         {/* Integration Section */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Integration</p>
-                <h2 className="font-inter text-4xl text-primary-navy mb-6">
-                  Seamless POS Integration
-                </h2>
-                <p className="text-lg text-gray-600 mb-8">
-                  Ring to Kitchen AI integrates directly with your existing point-of-sale system.
-                  Orders flow automatically from call to kitchen with zero manual entry.
-                </p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="text-center mb-12">
+              <p className="text-primary-navy font-semibold text-sm uppercase tracking-wider mb-3">Integration</p>
+              <h2 className="font-inter text-4xl text-primary-navy mb-4">
+                Seamless <span className="text-energy-red">POS Integration</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Ring to Kitchen AI integrates directly with your existing point-of-sale system.
+                Orders flow automatically from call to kitchen with zero manual entry.
+              </p>
+            </div>
 
-                <div className="space-y-4">
-                  {[
-                    { title: 'Real-Time Sync', desc: 'Orders appear in your POS instantly' },
-                    { title: 'Menu Updates', desc: 'Changes sync automatically to our AI' },
-                    { title: 'Price Changes', desc: 'Always uses current pricing' },
-                    { title: 'Inventory Aware', desc: 'Knows what\'s available to sell' },
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-4 bg-soft-gray rounded-xl p-4">
-                      <div className="w-10 h-10 bg-energy-red rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-primary-navy">{item.title}</h4>
-                        <p className="text-sm text-gray-600">{item.desc}</p>
-                      </div>
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
+              <div className="space-y-4">
+                {[
+                  { title: 'Real-Time Sync', desc: 'Orders appear in your POS instantly' },
+                  { title: 'Menu Updates', desc: 'Changes sync automatically to our AI' },
+                  { title: 'Price Changes', desc: 'Always uses current pricing' },
+                  { title: 'Inventory Aware', desc: 'Knows what\'s available to sell' },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4 bg-soft-gray rounded-xl p-4">
+                    <div className="w-10 h-10 bg-energy-red rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
-                  ))}
-                </div>
+                    <div>
+                      <h4 className="font-bold text-primary-navy">{item.title}</h4>
+                      <p className="text-sm text-gray-600">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
 
               <div className="bg-gradient-to-br from-primary-navy to-[#1a3a5c] rounded-2xl p-8 text-white">
-                <h3 className="font-inter text-2xl mb-6">Supported Systems</h3>
+                <h3 className="font-inter text-2xl mb-6 text-center">Supported Systems</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {['Toast', 'Square', 'Clover', 'Lightspeed', 'Revel', 'Custom API'].map((system, idx) => (
                     <div key={idx} className="bg-white/10 rounded-lg p-4 text-center">
@@ -233,24 +240,24 @@ export default function HowItWorksPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-r from-energy-red to-[#FF6B4A]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-inter text-4xl text-white mb-6">
-              Ready to See It in Action?
+        <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+            <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-white">
+              Ready to <span className="text-energy-red">See It</span> in Action?
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-xl mb-8 text-white/90">
               Schedule a personalized demo and see how Ring to Kitchen AI can transform your restaurant
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setIsDemoModalOpen(true)}
-                className="bg-white text-energy-red px-8 py-4 rounded-lg hover:bg-primary-navy hover:text-white transition-all duration-300 font-bold text-lg shadow-lg"
+                className="bg-white text-energy-red px-8 py-4 rounded-lg hover:bg-energy-red hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
               >
                 Schedule Demo
               </button>
               <Link
                 href="/pricing"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-energy-red transition-all duration-300 font-bold text-lg"
+                className="border-2 border-white text-white hover:bg-white hover:text-primary-navy hover:scale-105 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center shadow-lg"
               >
                 View Pricing
               </Link>

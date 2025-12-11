@@ -19,7 +19,7 @@ export default function TestimonialsPage() {
   const successCases = [
     {
       id: 1,
-      image: '/calle.png',
+      image: '/tratoria.jpg',
       name: 'Bella Italia Trattoria',
       description: 'Family-owned Italian restaurant that struggled with missed dinner rush calls. After implementing Ring to Kitchen AI, they captured every order and increased weekend revenue significantly.',
       metric1Value: '+38%',
@@ -29,7 +29,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 2,
-      image: '/chef.jpg',
+      image: '/Japon.jpg',
       name: 'Sakura Sushi House',
       description: 'High-volume sushi restaurant that needed to handle complex phone orders during peak hours. AI now manages all takeout orders while staff focuses on dine-in guests.',
       metric1Value: '150+',
@@ -39,7 +39,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 3,
-      image: '/vino.png',
+      image: '/taco.jpg',
       name: 'El Rancho Mexicano',
       description: 'Popular Mexican restaurant that was losing customers to voicemail. Now their AI assistant handles bilingual orders 24/7, even during the busiest lunch hours.',
       metric1Value: '24/7',
@@ -60,7 +60,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 2,
-      image: '/Sofia.png',
+      image: '/Ana.png',
       quote: 'The AI understands our menu better than some of our staff! It handles modifications, allergies, and special requests flawlessly. Our customers love the quick, professional service.',
       name: 'Jennifer Walsh',
       position: 'General Manager',
@@ -68,7 +68,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 3,
-      image: '/Sofia2.png',
+      image: '/Pedro.png',
       quote: 'We were skeptical at first, but the results speak for themselves. Staff is happier, customers are satisfied, and we\'re making more money. It\'s a no-brainer investment.',
       name: 'Marco DiStefano',
       position: 'Co-Owner',
@@ -95,10 +95,10 @@ export default function TestimonialsPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
             <div className="max-w-3xl">
-              <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-4">Real Testimonials</p>
+              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Real Testimonials</p>
               <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
-                Real Stories from Restaurants that{' '}
-                <span className="text-energy-red">Transformed Their Service</span> with AI
+                <span className="text-energy-red">Real Stories</span> from Restaurants that{' '}
+                Transformed Their Service <span className="text-energy-red">with AI</span>
               </h1>
               <p className="text-xl text-white/80 mb-8">
                 Discover how restaurants like yours are revolutionizing customer service
@@ -265,9 +265,9 @@ export default function TestimonialsPage() {
                       </div>
                     </div>
 
-                    <button className="w-full bg-primary-navy text-white py-3 rounded-lg hover:bg-energy-red transition-colors font-bold">
+                    <Link href="/case-studies" className="block w-full bg-primary-navy text-white py-3 rounded-lg hover:bg-energy-red transition-colors font-bold text-center">
                       Read Full Case
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -275,12 +275,32 @@ export default function TestimonialsPage() {
           </div>
         </section>
 
-        {/* Quotes Carousel */}
-        <section className="py-20 bg-gradient-to-b from-primary-navy to-[#2a6aa8] relative overflow-hidden">
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '50px 50px' }}></div>
+        {/* Stats Bar */}
+        <section className="py-16 bg-gradient-to-r from-energy-red to-[#FF6B4A]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <p className="text-white text-5xl font-bold mb-2">150+</p>
+                <p className="text-white/80">Active Restaurants</p>
+              </div>
+              <div>
+                <p className="text-white text-5xl font-bold mb-2">50K+</p>
+                <p className="text-white/80">Calls Processed</p>
+              </div>
+              <div>
+                <p className="text-white text-5xl font-bold mb-2">4.9/5</p>
+                <p className="text-white/80">Avg Satisfaction</p>
+              </div>
+              <div>
+                <p className="text-white text-5xl font-bold mb-2">+35%</p>
+                <p className="text-white/80">Avg Sales Increase</p>
+              </div>
+            </div>
           </div>
+        </section>
 
+        {/* Quotes Carousel */}
+        <section className="py-20 relative overflow-hidden bg-gradient-to-b from-primary-navy to-[#2a6aa8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">What They Say</p>
@@ -321,75 +341,28 @@ export default function TestimonialsPage() {
           </div>
         </section>
 
-        {/* Stats Bar */}
-        <section className="py-16 bg-gradient-to-r from-energy-red to-[#FF6B4A]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <p className="text-white text-5xl font-bold mb-2">150+</p>
-                <p className="text-white/80">Active Restaurants</p>
-              </div>
-              <div>
-                <p className="text-white text-5xl font-bold mb-2">50K+</p>
-                <p className="text-white/80">Calls Processed</p>
-              </div>
-              <div>
-                <p className="text-white text-5xl font-bold mb-2">4.9/5</p>
-                <p className="text-white/80">Avg Satisfaction</p>
-              </div>
-              <div>
-                <p className="text-white text-5xl font-bold mb-2">+35%</p>
-                <p className="text-white/80">Avg Sales Increase</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA */}
-        <section className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-navy via-[#1a3a5c] to-primary-navy"></div>
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-energy-red/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-energy-red/5 rounded-full blur-3xl"></div>
-          </div>
-
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div className="w-24 h-24 bg-energy-red/20 rounded-full flex items-center justify-center mx-auto mb-8">
-              <svg className="w-12 h-12 text-energy-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-              </svg>
-            </div>
-
-            <h2 className="font-inter text-4xl sm:text-5xl text-white mb-6">
-              Join the Restaurants That{' '}
-              <span className="text-energy-red">Transformed Their Business</span>
+        <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+            <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-white">
+              Join the Restaurants That <span className="text-energy-red">Transformed</span> Their Business
             </h2>
-            <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Schedule a personalized demo and discover how Ring to Kitchen AI
-              can revolutionize your restaurant's phone service.
+            <p className="text-xl mb-8 text-white/90">
+              Schedule a personalized demo and discover how Ring to Kitchen AI can revolutionize your restaurant
             </p>
-
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setIsDemoModalOpen(true)}
-                className="bg-energy-red text-white px-10 py-5 rounded-xl hover:bg-white hover:text-energy-red transition-all duration-300 font-bold text-xl shadow-2xl hover:scale-105"
+                className="bg-white text-energy-red px-8 py-4 rounded-lg hover:bg-energy-red hover:text-white hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
               >
-                Schedule a Demo
+                Schedule Demo
               </button>
-              <Link href="/pricing" className="border-2 border-white text-white px-10 py-5 rounded-xl hover:bg-white hover:text-primary-navy transition-all duration-300 font-bold text-xl">
-                View Plans
+              <Link
+                href="/pricing"
+                className="border-2 border-white text-white hover:bg-white hover:text-primary-navy hover:scale-105 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center shadow-lg"
+              >
+                View Pricing
               </Link>
-            </div>
-
-            <div className="mt-12 flex flex-wrap justify-center gap-6">
-              {['No commitment', 'Personalized demo', 'English & Spanish support'].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-white/60">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{item}</span>
-                </div>
-              ))}
             </div>
           </div>
         </section>
