@@ -107,7 +107,7 @@ export default function RootLayout({
             "contactPoint": {
               "@type": "ContactPoint",
               "contactType": "Sales",
-              "email": "hello@ringtokitchen.ai"
+              "telephone": "+1-916-759-3687"
             },
             "sameAs": [
               "https://www.linkedin.com/company/ringtokitchen-ai"

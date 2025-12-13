@@ -68,20 +68,7 @@ export default function ContactPage() {
         {/* Contact Methods */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              <a href="mailto:contact@ringtokitchen.ai" className="bg-soft-gray rounded-2xl p-8 text-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.3)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
-                <div className="w-16 h-16 bg-energy-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-energy-red/20 transition-colors">
-                  <svg className="w-8 h-8 text-energy-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h3 className="font-inter text-xl text-primary-navy mb-3">Email Us</h3>
-                <p className="text-gray-600 mb-4">Send us an email and we'll respond within 24 hours</p>
-                <span className="text-energy-red font-bold text-lg group-hover:underline">
-                  contact@ringtokitchen.ai
-                </span>
-              </a>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               <a href="tel:+19167593687" className="bg-soft-gray rounded-2xl p-8 text-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.3)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
                 <div className="w-16 h-16 bg-energy-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-energy-red/20 transition-colors">
                   <svg className="w-8 h-8 text-energy-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="md:pt-6 text-center md:text-left">
             <h4 className="font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href={`mailto:${COMPANY_INFO.email}`} className="text-white/70 hover:text-energy-red transition">Contact</a></li>
+              <li><Link href="/contact" className="text-white/70 hover:text-energy-red transition">Contact</Link></li>
               <li><Link href="/privacy" className="text-white/70 hover:text-energy-red transition">Privacy Policy</Link></li>
               <li><Link href="/terms" className="text-white/70 hover:text-energy-red transition">Terms of Service</Link></li>
             </ul>
@@ -45,11 +45,6 @@ export default function Footer() {
           <div className="md:pt-6 text-center md:text-left">
             <h4 className="font-bold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>
-                <a href={`mailto:contact@ringtokitchen.ai`} className="hover:text-energy-red transition">
-                  contact@ringtokitchen.ai
-                </a>
-              </li>
               <li>
                 <a href="tel:+19167593687" className="hover:text-energy-red transition font-bold">
                   {COMPANY_INFO.phone}
