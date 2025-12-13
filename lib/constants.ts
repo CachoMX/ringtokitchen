@@ -12,7 +12,7 @@ export const COMPANY_INFO = {
   name: 'Ring to Kitchen AI',
   tagline: 'From ring to kitchen — AI that speaks restaurant',
   email: 'hello@ringtokitchen.ai',
-  phone: '+1 (448) 229-9561',
+  phone: '+1 (916) 759-3687',
   website: 'ringtokitchen.ai',
   calendlyUrl: 'https://calendly.com/austin-vwdd/ring-to-kitchen-ai',
 };

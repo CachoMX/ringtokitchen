@@ -82,7 +82,7 @@ export default function ContactPage() {
                 </span>
               </a>
 
-              <a href="tel:+14482299561" className="bg-soft-gray rounded-2xl p-8 text-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.3)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
+              <a href="tel:+19167593687" className="bg-soft-gray rounded-2xl p-8 text-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.3)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
                 <div className="w-16 h-16 bg-energy-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-energy-red/20 transition-colors">
                   <svg className="w-8 h-8 text-energy-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -91,7 +91,7 @@ export default function ContactPage() {
                 <h3 className="font-inter text-xl text-primary-navy mb-3">Call Us</h3>
                 <p className="text-gray-600 mb-4">Talk to our team directly during business hours</p>
                 <span className="text-energy-red font-bold text-lg group-hover:underline">
-                  +1 (448) 229-9561
+                  +1 (916) 759-3687
                 </span>
               </a>
 
