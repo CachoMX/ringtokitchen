@@ -199,8 +199,8 @@ export default function ResourcesPage() {
                 </div>
                 <h3 className="font-inter text-xl text-primary-navy mb-3">Phone Support</h3>
                 <p className="text-gray-600 mb-4">Talk to our team directly</p>
-                <a href="tel:+14482299561" className="text-energy-red font-bold hover:underline">
-                  +1 (448) 229-9561
+                <a href="tel:+19167593687" className="text-energy-red font-bold hover:underline">
+                  +1 (916) 759-3687
                 </a>
               </div>
 
