@@ -54,12 +54,12 @@ export default function ContactPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
             <div className="max-w-3xl">
-              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contact Us</p>
+              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contact Ring to Kitchen AI</p>
               <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-energy-red mb-6 leading-tight">
-                Get in <span className="text-white">Touch</span>
+                Contact Us About <span className="text-white">Restaurant Voice AI</span>
               </h1>
               <p className="text-xl text-white/80">
-                We're here to help you transform your restaurant with AI
+                Questions about AI phone answering for your restaurant? Our team is ready to help.
               </p>
             </div>
           </div>
@@ -103,10 +103,10 @@ export default function ContactPage() {
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="font-inter text-3xl sm:text-4xl text-primary-navy mb-4">
-                  Send Us a <span className="text-energy-red">Message</span>
+                  Request AI Phone System <span className="text-energy-red">Information</span>
                 </h2>
                 <p className="text-gray-600">
-                  Fill out the form below and we'll get back to you as soon as possible
+                  Tell us about your restaurant and we'll show you how AI phone answering can help
                 </p>
               </div>
 
@@ -218,9 +218,9 @@ export default function ContactPage() {
         <section className="py-20 bg-soft-gray">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">About Us</p>
+              <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">About Ring to Kitchen AI</p>
               <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
-                The Company Behind <span className="text-energy-red">Ring to Kitchen AI</span>
+                The Team Building <span className="text-energy-red">Restaurant Voice AI</span>
               </h2>
             </div>
 
@@ -270,10 +270,10 @@ export default function ContactPage() {
         <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/naranja%20y%20azul.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
             <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-white">
-              Ready to <span className="text-energy-red">Get Started?</span>
+              Start Your Free <span className="text-energy-red">AI Demo Today</span>
             </h2>
             <p className="text-xl mb-8 text-white/90">
-              Schedule a demo and see Ring to Kitchen AI in action
+              See how AI phone answering transforms restaurant operations—book your demo now
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button

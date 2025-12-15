@@ -11,13 +11,31 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ringtokitchen.ai'),
-  title: "Ring to Kitchen AI | AI Voice Agent for Restaurants",
-  description: "Let your AI handle calls, reservations, and orders. Your team focuses on hospitality. 24/7 AI support for restaurants.",
-  keywords: ["AI phone system for restaurants", "restaurant AI voice agent", "restaurant call answering AI", "AI reservation system", "restaurant automation"],
+  title: "Ring to Kitchen AI | Restaurant Voice AI That Never Misses an Order",
+  description: "AI phone answering for restaurants that takes orders, handles reservations, and answers calls 24/7. 99% accuracy, bilingual support (English & Spanish). Trusted by 100+ restaurants.",
+  keywords: [
+    // Primary Keywords
+    "AI phone answering for restaurants",
+    "restaurant voice AI",
+    "AI order taking system",
+    // Secondary Keywords
+    "restaurant call automation",
+    "AI reservation system",
+    "phone ordering system for restaurants",
+    "automated restaurant phone service",
+    // Long-tail Keywords
+    "24/7 AI phone answering for pizza restaurants",
+    "bilingual restaurant AI voice agent",
+    "AI that takes food orders by phone",
+    "restaurant phone system with AI",
+    "never miss restaurant order AI",
+    "voice AI for fast casual restaurants",
+    "AI phone system for multi-location restaurants"
+  ],
   authors: [{ name: "Ring to Kitchen AI" }],
   openGraph: {
-    title: "Ring to Kitchen AI | AI Voice Agent for Restaurants",
-    description: "Let your AI handle calls, reservations, and orders. Your team focuses on hospitality.",
+    title: "Ring to Kitchen AI | Restaurant Voice AI That Never Misses an Order",
+    description: "AI phone answering for restaurants. Take orders, manage reservations, and answer calls 24/7 with 99% accuracy. Bilingual support. Trusted by 100+ restaurants.",
     url: "https://ringtokitchen.ai",
     siteName: "Ring to Kitchen AI",
     images: [
@@ -33,8 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ring to Kitchen AI | AI Voice Agent for Restaurants",
-    description: "Let your AI handle calls, reservations, and orders. Your team focuses on hospitality.",
+    title: "Ring to Kitchen AI | Restaurant Voice AI That Never Misses an Order",
+    description: "AI phone answering for restaurants. Take orders 24/7 with 99% accuracy. Bilingual support. Join 100+ restaurants.",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -95,13 +113,13 @@ export default function RootLayout({
           </Script>
         )}
 
-        {/* Schema.org Markup */}
+        {/* Schema.org Organization Markup */}
         <Script id="schema-org" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Ring to Kitchen AI",
-            "description": "AI voice agent service for restaurants",
+            "description": "Restaurant voice AI that handles phone orders, reservations, and customer calls 24/7 with 99% accuracy",
             "url": "https://ringtokitchen.ai",
             "logo": "https://ringtokitchen.ai/images/logo.png",
             "contactPoint": {
@@ -112,6 +130,86 @@ export default function RootLayout({
             "sameAs": [
               "https://www.linkedin.com/company/ringtokitchen-ai"
             ]
+          })}
+        </Script>
+
+        {/* Schema.org FAQ Markup */}
+        <Script id="schema-faq" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is AI phone answering for restaurants?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AI phone answering is an automated voice system that handles incoming calls to your restaurant 24/7. It takes food orders, manages reservations, answers common questions about your menu and hours, and sends order details directly to your kitchen—all without requiring staff intervention."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How accurate is AI order taking compared to human staff?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ring to Kitchen AI achieves 99% order accuracy—often higher than human order takers during busy periods. Our restaurant-trained AI is specifically designed to understand food orders, including complex modifications, dietary requests, and multi-item orders."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does the AI work with my existing POS system?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes! Ring to Kitchen AI can integrate seamlessly with most popular restaurant POS systems, sending orders directly into your existing workflow. We also offer a standalone solution if you prefer to receive orders separately."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can the AI answer calls in Spanish and English?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely. Ring to Kitchen AI provides fully bilingual support in English and Spanish, automatically detecting which language your customer prefers."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does restaurant AI phone answering cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our plans start at $299/month for small restaurants handling up to 500 calls. Most restaurants see ROI within the first month by capturing orders from previously missed calls."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens if a customer has a complex request the AI can't handle?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "While our AI handles 95%+ of typical restaurant calls, it's designed to recognize when human assistance is needed. In those rare cases, the AI can seamlessly transfer the call to your staff or take a message for callback."
+                }
+              }
+            ]
+          })}
+        </Script>
+
+        {/* Schema.org SoftwareApplication Markup */}
+        <Script id="schema-software" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Ring to Kitchen AI",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Cloud-based",
+            "offers": {
+              "@type": "Offer",
+              "price": "299",
+              "priceCurrency": "USD",
+              "priceValidUntil": "2025-12-31"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "ratingCount": "100"
+            }
           })}
         </Script>
       </head>

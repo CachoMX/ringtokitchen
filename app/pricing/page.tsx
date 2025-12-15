@@ -83,12 +83,12 @@ export default function PricingPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
             <div className="max-w-3xl">
-              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Pricing</p>
+              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">AI Phone Answering Pricing</p>
               <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight whitespace-nowrap">
-                Simple, <span className="text-energy-red">Transparent Pricing</span>
+                Restaurant AI <span className="text-energy-red">Phone System Pricing</span>
               </h1>
               <p className="text-xl text-white/80">
-                No hidden fees. No long-term contracts. Cancel anytime.
+                Affordable voice AI plans starting at $299/month. No hidden fees. Cancel anytime.
               </p>
             </div>
           </div>
@@ -180,12 +180,12 @@ export default function PricingPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-navy/90 to-[#0d1f3c]/95"></div>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Find Your Plan</p>
+            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">AI Phone System Recommendation</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
-              Which Plan is <span className="text-energy-red">Right for You?</span>
+              Find the Best AI Plan <span className="text-energy-red">for Your Restaurant</span>
             </h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              Select the option that best describes your restaurant in each row
+              Answer these questions to get a personalized AI phone answering recommendation
             </p>
           </div>
 
@@ -339,7 +339,7 @@ export default function PricingPage() {
       <section className="py-20 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-inter text-4xl text-primary-navy text-center mb-12">
-            Full Feature Comparison
+            Compare AI Phone Answering Features by Plan
           </h2>
 
           <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
@@ -382,7 +382,7 @@ export default function PricingPage() {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-inter text-4xl text-primary-navy text-center mb-12">
-            Frequently Asked Questions
+            Restaurant AI Phone System FAQ
           </h2>
 
           <div className="space-y-4">
@@ -410,10 +410,10 @@ export default function PricingPage() {
       <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
           <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-white">
-            Still Not Sure? <span className="text-energy-red">Let's Talk.</span>
+            Get a Free AI Phone Answering <span className="text-energy-red">Demo Today</span>
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Schedule a personalized demo and see Ring to Kitchen AI in action
+            See how restaurant voice AI handles real orders—schedule your personalized demo
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button

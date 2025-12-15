@@ -85,14 +85,14 @@ export default function HomePage() {
 
           {/* Headline */}
           <h1 className="font-inter text-5xl sm:text-6xl lg:text-7xl text-white mb-6 leading-tight">
-            Never Miss<br />
-            <span className="bg-gradient-to-r from-energy-red to-[#FF6B4A] text-transparent bg-clip-text">Another Order</span>
+            AI Phone Answering<br />
+            <span className="bg-gradient-to-r from-energy-red to-[#FF6B4A] text-transparent bg-clip-text">for Restaurants</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
-            Restaurant voice AI that handles every call, takes perfect orders, and works 24/7.
-            Works standalone or integrates with your existing POS.
+            Never miss another order. Our restaurant voice AI takes calls, processes orders with 99% accuracy,
+            and handles reservations 24/7—in English and Spanish.
           </p>
 
           {/* Key Features Pills */}
@@ -140,10 +140,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
-              How It <span className="text-energy-red">Works</span>
+              How Restaurant <span className="text-energy-red">AI Phone Ordering</span> Works
             </h2>
             <p className="text-lg text-gray-600">
-              From ring to kitchen in four simple steps
+              From customer call to kitchen ticket in four automated steps
             </p>
           </div>
 
@@ -227,10 +227,10 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Voice AI Demo</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
-              Hear Our AI in <span className="text-energy-red">Action</span>
+              Hear Our Restaurant <span className="text-energy-red">Voice AI</span> in Action
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Listen to real examples of how our AI handles customer calls
+              Listen to real examples of AI-powered phone ordering and reservations
             </p>
           </div>
 
@@ -242,9 +242,9 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <h3 className="font-inter text-xl text-primary-navy text-center mb-3">Taking an Order</h3>
+              <h3 className="font-inter text-xl text-primary-navy text-center mb-3">AI Phone Order Taking</h3>
               <p className="text-gray-600 text-center text-sm mb-6">
-                Listen to how our AI handles a real customer call with natural conversation
+                Hear how our voice AI processes food orders with natural conversation flow
               </p>
               {/* Real Audio Player */}
               <div className="bg-white rounded-xl p-4 border border-gray-200">
@@ -262,9 +262,9 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="font-inter text-xl text-primary-navy text-center mb-3">Booking Reservation</h3>
+              <h3 className="font-inter text-xl text-primary-navy text-center mb-3">AI Reservation System</h3>
               <p className="text-gray-600 text-center text-sm mb-6">
-                Listen to a seamless reservation booking experience
+                Automated restaurant reservation booking with voice AI
               </p>
               {/* Coming Soon */}
               <div className="bg-gradient-to-br from-primary-navy to-[#1a3a5c] rounded-xl p-6 text-center">
@@ -317,10 +317,10 @@ export default function HomePage() {
       <section className="bg-energy-red pt-16 pb-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
-            Why Restaurants Choose <br /><span className="text-primary-navy">Ring to Kitchen AI</span>
+            Why 100+ Restaurants Choose <br /><span className="text-primary-navy">AI Phone Answering</span>
           </h2>
           <p className="text-xl text-white/90">
-            Restaurant-trained AI that understands your business
+            Restaurant-trained voice AI built to understand food orders, modifications, and hospitality
           </p>
         </div>
       </section>
@@ -368,10 +368,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="font-inter text-3xl sm:text-4xl text-primary-navy mb-3">
-              Real Results from Real Restaurants
+              Proven Results: AI Phone Systems That Increase Restaurant Revenue
             </h2>
             <p className="text-lg text-gray-600">
-              Proven impact on your bottom line
+              Real data from restaurants using automated phone ordering
             </p>
           </div>
 
@@ -415,9 +415,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="text-center mb-16">
             <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4 drop-shadow-lg" style={{ fontStyle: 'italic' }}>
-              Perfect For Every <span className="text-energy-red">Restaurant Type</span>
+              AI Phone Answering For Every <span className="text-energy-red">Restaurant Type</span>
             </h2>
-            <p className="text-white/90 text-lg">From food trucks to fine dining, we've got you covered</p>
+            <p className="text-white/90 text-lg">From food trucks to fine dining—automated order taking tailored to your business</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -475,10 +475,10 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Quick Assessment</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
-              Is Your Restaurant <span className="text-energy-red">Ready for AI?</span>
+              Is Your Restaurant <span className="text-energy-red">Ready for AI Phone Answering?</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Answer a few quick questions to see how AI could benefit your restaurant
+              Quick assessment: discover how much revenue you're losing from missed calls
             </p>
           </div>
 
@@ -543,9 +543,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-navy/90 to-[#0d1f3c]/95"></div>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <p className="text-white font-semibold text-sm uppercase tracking-wider mb-3">Calculate Your Savings</p>
+            <p className="text-white font-semibold text-sm uppercase tracking-wider mb-3">Restaurant ROI Calculator</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
-              How Much Are <span className="text-energy-red">Missed Calls</span> Costing You?
+              How Much Revenue Are <span className="text-energy-red">Missed Calls</span> Costing Your Restaurant?
             </h2>
           </div>
 
@@ -629,12 +629,12 @@ export default function HomePage() {
       <section className="py-20 bg-gradient-to-b from-white to-soft-gray relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">What They Say</p>
+            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Customer Success Stories</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
-              Loved by <span className="text-energy-red">Restaurant</span> Owners
+              Restaurant Owners Love Our <span className="text-energy-red">AI Phone System</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Real feedback from real restaurant owners using Ring to Kitchen AI
+              Real testimonials from restaurant owners using AI-powered phone ordering
             </p>
           </div>
 
@@ -691,10 +691,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-inter text-4xl sm:text-5xl text-white mb-4">
-              <span className="text-energy-red">Simple,</span> Transparent Pricing
+              <span className="text-energy-red">Affordable</span> AI Phone Answering Plans
             </h2>
             <p className="text-lg text-white/80">
-              No hidden fees. Cancel anytime.
+              Restaurant voice AI pricing that fits your budget. No hidden fees. Cancel anytime.
             </p>
           </div>
 
@@ -769,12 +769,12 @@ export default function HomePage() {
       <section className="py-20 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Blog</p>
+            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Restaurant Industry Blog</p>
             <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
-              Latest <span className="text-energy-red">Insights</span>
+              AI & Restaurant <span className="text-energy-red">Industry Insights</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Stay ahead of the restaurant industry
+              Expert guides on restaurant automation, AI phone systems, and boosting revenue
             </p>
           </div>
 
@@ -823,14 +823,100 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-energy-red font-semibold text-sm uppercase tracking-wider mb-3">Frequently Asked Questions</p>
+            <h2 className="font-inter text-4xl sm:text-5xl text-primary-navy mb-4">
+              Common Questions About <span className="text-energy-red">Restaurant AI Phone Systems</span>
+            </h2>
+            <p className="text-lg text-gray-600">
+              Everything you need to know about AI phone answering for your restaurant
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {/* FAQ 1 */}
+            <div className="bg-soft-gray rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+              <h3 className="font-inter text-xl text-primary-navy mb-3 font-bold">
+                What is AI phone answering for restaurants?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                AI phone answering is an automated voice system that handles incoming calls to your restaurant 24/7. It takes food orders, manages reservations, answers common questions about your menu and hours, and sends order details directly to your kitchen—all without requiring staff intervention. Ring to Kitchen AI understands natural conversation, including modifications like "extra cheese" or "no onions."
+              </p>
+            </div>
+
+            {/* FAQ 2 */}
+            <div className="bg-soft-gray rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+              <h3 className="font-inter text-xl text-primary-navy mb-3 font-bold">
+                How accurate is AI order taking compared to human staff?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Ring to Kitchen AI achieves 99% order accuracy—often higher than human order takers during busy periods. Our restaurant-trained AI is specifically designed to understand food orders, including complex modifications, dietary requests, and multi-item orders. The AI confirms each order with the customer before sending it to your kitchen.
+              </p>
+            </div>
+
+            {/* FAQ 3 */}
+            <div className="bg-soft-gray rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+              <h3 className="font-inter text-xl text-primary-navy mb-3 font-bold">
+                Does the AI work with my existing POS system?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Yes! Ring to Kitchen AI can integrate seamlessly with most popular restaurant POS systems, sending orders directly into your existing workflow. We also offer a standalone solution if you prefer to receive orders separately. Our team handles all setup and integration at no extra cost.
+              </p>
+            </div>
+
+            {/* FAQ 4 */}
+            <div className="bg-soft-gray rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+              <h3 className="font-inter text-xl text-primary-navy mb-3 font-bold">
+                Can the AI answer calls in Spanish and English?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Absolutely. Ring to Kitchen AI provides fully bilingual support in English and Spanish, automatically detecting which language your customer prefers. This helps you serve a wider customer base without hiring additional bilingual staff, especially during late-night or off-peak hours.
+              </p>
+            </div>
+
+            {/* FAQ 5 */}
+            <div className="bg-soft-gray rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+              <h3 className="font-inter text-xl text-primary-navy mb-3 font-bold">
+                How much does restaurant AI phone answering cost?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Our plans start at $299/month for small restaurants handling up to 500 calls. Most restaurants see ROI within the first month by capturing orders from previously missed calls. We offer a free demo so you can see exactly how the AI would work for your specific restaurant before committing.
+              </p>
+            </div>
+
+            {/* FAQ 6 */}
+            <div className="bg-soft-gray rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+              <h3 className="font-inter text-xl text-primary-navy mb-3 font-bold">
+                What happens if a customer has a complex request the AI can't handle?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                While our AI handles 95%+ of typical restaurant calls, it's designed to recognize when human assistance is needed. In those rare cases, the AI can seamlessly transfer the call to your staff or take a message for callback. You're always in control of how calls are escalated.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setIsDemoModalOpen(true)}
+              className="bg-energy-red text-white px-8 py-4 rounded-lg hover:bg-primary-navy transition-all duration-300 font-bold text-lg shadow-lg hover:scale-105"
+            >
+              Get Your Questions Answered — Schedule a Demo
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
           <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-white">
-            Ready to <span className="text-energy-red">Transform</span> Your Restaurant?
+            Start Taking Orders 24/7 With <span className="text-energy-red">AI Phone Answering</span>
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            Join 100+ restaurants already using Ring to Kitchen AI
+            Join 100+ restaurants already increasing revenue with Ring to Kitchen AI
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button

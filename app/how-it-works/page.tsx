@@ -84,13 +84,12 @@ export default function HowItWorksPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
             <div className="max-w-3xl">
-              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Our Process</p>
+              <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">How AI Phone Ordering Works</p>
               <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl text-energy-red mb-6 leading-tight">
-                From Ring to Kitchen in{' '}
-                <span className="text-white">Four Simple Steps</span>
+                How Restaurant AI <span className="text-white">Takes Phone Orders</span>
               </h1>
               <p className="text-xl text-white/80 max-w-2xl">
-                See exactly how our AI transforms every phone call into a seamless customer experience
+                From customer call to kitchen ticket in four automated steps—see how voice AI handles orders 24/7
               </p>
             </div>
           </div>
@@ -153,10 +152,10 @@ export default function HowItWorksPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="font-inter text-4xl text-primary-navy mb-4">
-                The Complete Flow
+                Complete AI Phone Ordering Flow
               </h2>
               <p className="text-lg text-gray-600">
-                A visual representation of how Ring to Kitchen AI works
+                Visual guide: how automated phone ordering works for restaurants
               </p>
             </div>
 
@@ -190,13 +189,13 @@ export default function HowItWorksPage() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="text-center mb-12">
-              <p className="text-primary-navy font-semibold text-sm uppercase tracking-wider mb-3">Integration</p>
+              <p className="text-primary-navy font-semibold text-sm uppercase tracking-wider mb-3">Restaurant POS Integration</p>
               <h2 className="font-inter text-4xl text-primary-navy mb-4">
-                Seamless <span className="text-energy-red">POS Integration</span>
+                AI Phone System <span className="text-energy-red">POS Integration</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Ring to Kitchen AI integrates directly with your existing point-of-sale system.
-                Orders flow automatically from call to kitchen with zero manual entry.
+                Voice AI that connects directly to Toast, Square, Clover, and more.
+                Phone orders sync automatically—no manual entry required.
               </p>
             </div>
 
@@ -243,10 +242,10 @@ export default function HowItWorksPage() {
         <section className="relative overflow-hidden text-white flex items-center" style={{ minHeight: '600px', backgroundImage: 'url(/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
             <h2 className="font-inter text-4xl sm:text-5xl mb-6 text-white">
-              Ready to <span className="text-energy-red">See It</span> in Action?
+              Try AI Phone Answering <span className="text-energy-red">Free Demo</span>
             </h2>
             <p className="text-xl mb-8 text-white/90">
-              Schedule a personalized demo and see how Ring to Kitchen AI can transform your restaurant
+              See how voice AI takes real food orders—schedule your free personalized demo today
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
