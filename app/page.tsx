@@ -249,7 +249,7 @@ export default function HomePage() {
               {/* Real Audio Player */}
               <div className="bg-white rounded-xl p-4 border border-gray-200">
                 <audio controls className="w-full" style={{ height: '40px' }}>
-                  <source src="/recording (2).wav" type="audio/wav" />
+                  <source src="/recording.wav" type="audio/wav" />
                   Your browser does not support the audio element.
                 </audio>
               </div>
