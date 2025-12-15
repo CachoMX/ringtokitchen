@@ -782,7 +782,7 @@ export default function HomePage() {
           {latestPosts[0] && (
             <Link href={`/blog/${latestPosts[0].slug}`} className="block bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 group">
               <div className="grid md:grid-cols-2 gap-0">
-                <div className="h-64 md:h-80 overflow-hidden">
+                <div className="h-64 md:h-full min-h-[320px] overflow-hidden">
                   <img
                     src={latestPosts[0].image}
                     alt={latestPosts[0].title}
